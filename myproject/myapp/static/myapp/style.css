@@ -1,0 +1,28 @@
+li a {
+    color: green;
+}
+
+body {
+	background: white url("images/brickwall_pink_small.png") repeat right bottom;
+	overflow: hidden; /* disables overscrolling*/
+}
+
+
+#pinContainer {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	-webkit-perspective: 1000;
+	perspective: 1000;
+}
+
+#slideContainer {
+	width: 400%; /* to contain 4 panels, each with 100% of window width */
+	height: 100%;
+}
+
+.panel {
+	height: 100%;
+	width: 25%; /* relative to parent -> 25% of 400% = 100% of window width */		float: left;
+	float: left;
+}
