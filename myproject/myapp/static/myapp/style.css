@@ -42,26 +42,39 @@ body {
           box-shadow: inset 0 0 100px rgba(0,0,0,.2);*/
 }
 
+p.tagline {
+	margin-top: 40px;
+	font-size:20px;
+	font-family: 'Josefin Slab', serif;
+}
+
 .firstpage {
 	background: white url("images/stardust.png") repeat;
+	color: #b2b2b2;
 }
 .secondpage {
 	background: white url("images/stardust.png");
+	color: #b2b2b2;
 }
 .thirdpage {
 	background: white url("images/stardust.png");
+	color: #b2b2b2;
 }
 .fourthpage {
 	background: white url("images/stardust.png");
+	color: #b2b2b2;
 }
 .fifthpage {
 	background: white url("images/stardust.png");
+	color: #b2b2b2;
 }
 .sixthpage {
 	background: white url("images/stardust.png");
+	color: #b2b2b2;
 }
 .seventhpage {
 	background: white url("images/stardust.png");
+	color: #b2b2b2;
 }
 
 
@@ -76,7 +89,8 @@ body {
 
 /* Padding for spacing */
 .inner {
-  padding: 30px;
+  padding-bottom: 20px;
+  margin-top: 0;
 }
 
 
@@ -133,12 +147,12 @@ body {
 
 .cover {
   padding: 0 20px;
-  padding-top: 30%;
+  padding-top: 10%;
   padding-bottom: 30%;
   color: #fff;
 }
 .cover .btn-lg {
-  padding: 10px 20px;
+  padding: 10px 10px;
   font-weight: bold;
 }
 
@@ -159,8 +173,10 @@ body {
  * Footer
  */
 
-.mastfoot {
-  color: white; 
+.footer {
+	background: white url("images/stardust.png");
+	color: #b2b2b2;
+	width:100%;
 }
 
 
@@ -174,17 +190,12 @@ body {
     position: fixed;
     top: 0;
   }
-  .mastfoot {
-   
-    bottom: 0;
-  }
   /* Start the vertical centering */
   .site-wrapper-inner {
     vertical-align: middle;
   }
   /* Handle the widths */
   .masthead,
-  .mastfoot,
   .cover-container {
     width: 100%; /* Must be percentage or pixels for horizontal alignment */
   }
@@ -192,7 +203,6 @@ body {
 
 @media (min-width: 992px) {
   .masthead,
-  .mastfoot,
   .cover-container {
     width: 700px;
   }
@@ -208,8 +218,7 @@ items before this line are from bootstrap template
 */
 
 body {
-	overflow-y-top:hidden;
-	overflow-y-bottom:visible;
+	overflow:scroll;
 	/* disables overscrolling*/
 }
 

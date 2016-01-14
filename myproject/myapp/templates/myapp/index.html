@@ -16,6 +16,8 @@
 
 	<!--FONTS-->
 	<link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+
+	<link href='https://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
 	<!--END FONTS-->
 
     <meta charset="utf-8">
@@ -46,9 +48,33 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+
+    <!--script for toggling EYE.SVG -> CLOSEDEYE.svg --> 
+    <script type = "text/javascript">
+          function displayNextImage() {
+              x = (x === images.length - 1) ? 0 : x + 1;
+              document.getElementById("mainimg").src = images[x];
+          }
+
+          function displayPreviousImage() {
+              x = (x <= 0) ? images.length - 1 : x - 1;
+              document.getElementById("mainimg").src = images[x];
+          }
+
+          function startTimer() {
+              setInterval(displayNextImage, 3000);
+          }
+
+          var images = [], x = -1;
+          images[0] = "{% static 'myapp/images/eye.svg' %}" style="width:400px; height:400px";
+          images[1] = "{% static 'myapp/images/closedeye.svg' %}" style="width:400px; height:400px";
+      </script>
+    <!--end script for toggling main imgs-->
+
 </head>
 
-<body>
+<body onload = "startTimer()">
 	<div class="site-wrapper firstpage" id="top">
 		<div class="site-wrapper-inner">
 			<div class="cover-container">
@@ -89,14 +115,18 @@
 			    </nav> <!--end navigation-->
 
 		        <div class="inner cover">
-		           	<img src="{% static 'myapp/images/eye.svg' %}" style="width:400px; height:400px">
-		           	<img src="{% static 'myapp/images/closedeye.svg' %}"> 
+		           	<img id="mainimg" src="{% static 'myapp/images/eye.svg' %}" style="width:300px; height:300px">
+		           	<div>
+		           		<button type="button" onclick="displayPreviousImage()">Previous</button>
+       					<button type="button" onclick="displayNextImage()">Next</button>
 
-		           	<p class="lead"> create | design | code </p>
+       				</div>
+
+		           	<p class="tagline"> create | design | code </p>
 
 		           	<hr style="visibility: hidden;" />
 			       	<div class="inner bottomViewport" style="page-break-after:always;">
-				   		<span style="font-size:1.5em; color: white;" class="glyphicon glyphicon-chevron-down"></span>
+				   		<span style="font-size:1.5em; color: #b2b2b2;" class="glyphicon glyphicon-chevron-down"></span>
 			        </div>
 		        </div> <!-- end inner cover-->
 
@@ -150,7 +180,21 @@
 		<div class="site-wrapper-inner">
 			<div class="cover-container">
 				<h2> PHOTOGRAPHY </h2>
-		        
+				<p> ashdjashdajsdh </p>
+				<p> ashdjashdajsdh </p>
+				<p> ashdjashdajsdh </p>
+				<p> ashdjashdajsdh </p>
+				<p> ashdjashdajsdh </p>
+				<p> ashdjashdajsdh </p>
+				<p> ashdjashdajsdh </p>
+				<p> ashdjashdajsdh </p>
+				<p> ashdjashdajsdh </p>
+				<p> ashdjashdajsdh </p>
+				<p> ashdjashdajsdh </p>
+				<p> ashdjashdajsdh </p>
+				<p> ashdjashdajsdh </p>
+				<p> ashdjashdajsdh </p>
+				<p> ashdjashdajsdh </p>
 
 			</div> <!--end cover-container-->
         </div> <!--end site-wrapper-inner-->
@@ -163,7 +207,35 @@
 		<div class="site-wrapper-inner">
 			<div class="cover-container">
 				<h2> FINE ARTS </h2>
-		        
+				<p> ashdjashdajsdh </p>
+				<p> ashdjashdajsdh </p>
+				<p> ashdjashdajsdh </p>
+
+				<p> ashdjashdajsdh </p>
+				<p> ashdjashdajsdh </p>
+				<p> ashdjashdajsdh </p>
+				<p> ashdjashdajsdh </p>
+				<p> ashdjashdajsdh </p>
+				<p> ashdjashdajsdh </p>
+				<p> ashdjashdajsdh </p>
+				<p> ashdjashdajsdh </p>
+				<p> ashdjashdajsdh </p>
+				<p> ashdjashdajsdh </p>
+				<p> ashdjashdajsdh </p>
+
+				<p> ashdjashdajsdh </p>
+				<p> ashdjashdajsdh </p>
+				<p> ashdjashdajsdh </p>
+				<p> ashdjashdajsdh </p>
+				<p> ashdjashdajsdh </p>
+				<p> ashdjashdajsdh </p>
+				<p> ashdjashdajsdh </p>
+				<p> ashdjashdajsdh </p>
+				<p> ashdjashdajsdh </p>
+				<p> ashdjashdajsdh </p>
+				<p> ashdjashdajsdh </p>
+				<p> ashdjashdajsdh </p>
+
 
 			</div> <!--end cover-container-->
         </div> <!--end site-wrapper-inner-->
@@ -179,24 +251,16 @@
 		        
 
 
-
-
-
-
-
-
-
-				<!--FOOTER: in last page-->
-			    <div class="mastfoot">
-			        <div class="inner">
-			        	<p>anais angela lee  |  email:anaislee@seas.upenn.edu  |  cell:703-309-1339  |  <a href="#top" style="color: white">scroll to top</a></p>
-			        </div>
-			    </div> <!--end mastfoot-->
-
-
 			</div> <!--end cover-container-->
         </div> <!--end site-wrapper-inner-->
     </div> <!--end site-wrapper second-->
+
+    <!--FOOTER: in last page-->
+	<div class="footer">
+		<div class="inner">
+			<p>anais angela lee  |  email:anaislee@seas.upenn.edu  |  cell:703-309-1339  |  <a href="#top" style="color: white">scroll to top</a></p>
+		</div>
+	</div> <!--end mastfoot-->
 
 
 
