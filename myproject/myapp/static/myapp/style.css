@@ -32,8 +32,6 @@ body {
   text-align: center;
 }
 
-
-
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
   display: table;
@@ -47,17 +45,23 @@ body {
 .firstpage {
 	background: white url("images/stardust.png") repeat;
 }
-
 .secondpage {
-	background: white url("images/brickwall.png");
+	background: white url("images/stardust.png");
 }
-
 .thirdpage {
-	background: white url("images/brickwall.png");
+	background: white url("images/stardust.png");
 }
-
 .fourthpage {
-	background: white url("images/brickwall.png");
+	background: white url("images/stardust.png");
+}
+.fifthpage {
+	background: white url("images/stardust.png");
+}
+.sixthpage {
+	background: white url("images/stardust.png");
+}
+.seventhpage {
+	background: white url("images/stardust.png");
 }
 
 
@@ -82,6 +86,7 @@ body {
 .masthead-brand {
   margin-top: 10px;
   margin-bottom: 10px;
+  float: left;
 }
 
 .masthead-nav > li {
@@ -130,6 +135,7 @@ body {
   padding: 0 20px;
   padding-top: 30%;
   padding-bottom: 30%;
+  color: #fff;
 }
 .cover .btn-lg {
   padding: 10px 20px;
@@ -325,7 +331,7 @@ hr.small {
     z-index: 1000;
     position: fixed;
     right: 0;
-    width: 250px;
+    width: auto;
     height: 100%;
     margin-right: -250px;
     overflow-y: auto;
@@ -341,22 +347,24 @@ hr.small {
 	font-family: 'Quicksand', sans-serif;
     position: absolute;
     top: 5;
-    width: 250px;
+    width: auto;
     margin: 0;
-    padding: 10;
+    padding-top: 25px;
     list-style: none;
+    float: right;
 }
 
 .sidebar-nav li {
     text-indent: 20px;
     line-height: 40px;
+    float: right;
+    padding-right: 10%;
 }
 
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
     color: #b2b2b2;
-
 }
 
 .sidebar-nav li a:hover {
@@ -370,15 +378,24 @@ hr.small {
 }
 
 .sidebar-nav > .sidebar-brand {
-    height: 75px;
+    height: 60px;
     font-size: 20px;
     line-height: 75px;
-    padding-top: 10px;
+	float: right;
+    padding-right: 9%;
+    margin-bottom: 10px;
 }
 
 .sidebar-nav > .sidebar-brand a {
     color: #b2b2b2;
-    -webkit-transform:rotate(10deg);
+    /* Safari */
+    -webkit-transform:rotate(15deg);
+    /* Firefox */
+	-moz-transform: rotate(15deg);
+	/* IE */
+	-ms-transform: rotate(15deg);
+	/* Opera */
+	-o-transform: rotate(15deg);
 }
 
 .sidebar-nav > .sidebar-brand a:hover {
@@ -394,6 +411,16 @@ hr.small {
 /* Rotation of links in sidebar*/
 .l1 {
 	/* Safari */
+	-webkit-transform:rotate(11deg);
+	/* Firefox */
+	-moz-transform: rotate(11deg);
+	/* IE */
+	-ms-transform: rotate(11deg);
+	/* Opera */
+	-o-transform: rotate(11deg);
+}
+.l2 {
+	/* Safari */
 	-webkit-transform:rotate(7deg);
 	/* Firefox */
 	-moz-transform: rotate(7deg);
@@ -402,35 +429,25 @@ hr.small {
 	/* Opera */
 	-o-transform: rotate(7deg);
 }
-.l2 {
-	/* Safari */
-	-webkit-transform:rotate(4deg);
-	/* Firefox */
-	-moz-transform: rotate(4deg);
-	/* IE */
-	-ms-transform: rotate(4deg);
-	/* Opera */
-	-o-transform: rotate(4deg);
-}
 .l3 {
 	/* Safari */
-	-webkit-transform:rotate(1deg);
+	-webkit-transform:rotate(3deg);
 	/* Firefox */
-	-moz-transform: rotate(1deg);
+	-moz-transform: rotate(3deg);
 	/* IE */
-	-ms-transform: rotate(1deg);
+	-ms-transform: rotate(3deg);
 	/* Opera */
-	-o-transform: rotate(1deg);
+	-o-transform: rotate(3deg);
 }
 .l4 {
 	/* Safari */
-	-webkit-transform:rotate(-2deg);
+	-webkit-transform:rotate(-1deg);
 	/* Firefox */
-	-moz-transform: rotate(-2deg);
+	-moz-transform: rotate(-1deg);
 	/* IE */
-	-ms-transform: rotate(-2deg);
+	-ms-transform: rotate(-1deg);
 	/* Opera */
-	-o-transform: rotate(-2deg);
+	-o-transform: rotate(-1deg);
 }
 .l5 {
 	/* Safari */
@@ -444,23 +461,23 @@ hr.small {
 }
 .l6 {
 	/* Safari */
-	-webkit-transform:rotate(-8deg);
+	-webkit-transform:rotate(-9deg);
 	/* Firefox */
-	-moz-transform: rotate(-8deg);
+	-moz-transform: rotate(-9deg);
 	/* IE */
-	-ms-transform: rotate(-8deg);
+	-ms-transform: rotate(-9deg);
 	/* Opera */
-	-o-transform: rotate(-8deg);
+	-o-transform: rotate(-9deg);
 }
 .l7 {
 	/* Safari */
-	-webkit-transform:rotate(-11deg);
+	-webkit-transform:rotate(-13deg);
 	/* Firefox */
-	-moz-transform: rotate(-11deg);
+	-moz-transform: rotate(-13deg);
 	/* IE */
-	-ms-transform: rotate(-11deg);
+	-ms-transform: rotate(-13deg);
 	/* Opera */
-	-o-transform: rotate(-11deg);
+	-o-transform: rotate(-13deg);
 }
 
 
@@ -472,14 +489,15 @@ hr.small {
 }
 
 #sidebar-wrapper.active {
-	top:5%;
+	float: left;
+	top: 5px;
     right: 250px;
     width: 250px;
-    -webkit-transition: all 0.4s ease 0s;
-    -moz-transition: all 0.4s ease 0s;
-    -ms-transition: all 0.4s ease 0s;
-    -o-transition: all 0.4s ease 0s;
-    transition: all 0.4s ease 0s;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -ms-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
 }
 
 .toggle {
