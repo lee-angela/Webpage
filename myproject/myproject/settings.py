@@ -135,18 +135,13 @@ DIRNAME = os.path.dirname(__file__)
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(DIRNAME, 'static')
+# STATIC_ROOT = os.path.join(DIRNAME, 'static')
 
-STATICFILES_DIR = [
-    os.path.join(os.path.dirname(__file__), 'static').replace('\\','/'),
-  #  '/var/www/static/',
-]
+STATICFILES_DIR =     os.path.join(os.path.dirname(__file__), 'static').replace('\\','/'),
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
-
 )
 
 

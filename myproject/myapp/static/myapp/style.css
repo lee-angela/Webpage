@@ -30,9 +30,17 @@ body {
 body {
   color: #fff;
   text-align: center;
+  overflow:visible;
+  margin:0;
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
+* {
+  -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 .site-wrapper {
   display: table;
   width: 100%;
@@ -48,44 +56,151 @@ p.tagline {
 	font-family: 'Josefin Slab', serif;
 }
 
+
+/* diagonal div border going upwards to the right*/ 
+
+.top-diag-right {
+  height:90px;
+  margin-top:-100px;
+  -webkit-clip-path: polygon(100% 0, 0 0, 0 100%);
+  clip-path: polygon(100% 0, 0 0, 0 100%);
+}
+.bottom-diag-right {
+  height:90px;
+  -webkit-clip-path: polygon(100% 0, 0 100%, 100% 100%);
+  clip-path: polygon(100% 0, 0 100%, 100% 100%);
+  margin-top: -90px;
+}
+
+/* diagonal div border going upwards to the left*/
+.top-diag-left {
+  height:90px;
+  margin-top:-100px;
+  margin-bottom:0;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+.bottom-diag-left {
+  height:90px;
+  -webkit-clip-path: polygon(0 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+  margin-top: -90px;
+}
+
+/* between first and second pages*/
+.top-first {
+  background: white url("images/stardust.png");
+}
+.bottom-second {
+    background: white url("images/brickwall.png");
+}
+
+/* between second and third pages*/
+.top-second {
+  background: white url("images/brickwall.png");
+}
+.bottom-third {
+    background: white url("images/stardust.png");
+}
+
+/* between third and fourth pages*/
+.top-third {
+  background: white url("images/stardust.png");
+}
+.bottom-fourth {
+    background: white url("images/brickwall.png");
+}
+
+/* between fourth and fifth pages*/
+.top-fourth {
+  background: white url("images/brickwall.png");
+}
+.bottom-fifth {
+    background: white url("images/stardust.png");
+}
+
+/* between fifth and sixth pages*/
+.top-fifth {
+  background: white url("images/stardust.png");
+}
+.bottom-sixth {
+    background: white url("images/brickwall.png");
+}
+
+/* between sixth and seventh pages*/
+.top-sixth {
+  background: white url("images/brickwall.png");
+}
+.bottom-seventh {
+    background: white url("images/stardust.png");
+}
+
+
+/* page properties*/
 .firstpage {
 	background: white url("images/stardust.png") repeat;
 	color: #b2b2b2;
 }
 .secondpage {
-	background: white url("images/stardust.png");
+	background: white url("images/brickwall.png");
 	color: #b2b2b2;
+  z-index:10;
+  float:center;
+  width:100%;  
+  padding-bottom:500px;
 }
+
 .thirdpage {
 	background: white url("images/stardust.png");
 	color: #b2b2b2;
+  padding-bottom:100px;
 }
 .fourthpage {
-	background: white url("images/stardust.png");
+	background: white url("images/brickwall.png");
 	color: #b2b2b2;
+  padding-bottom:100px;
 }
 .fifthpage {
 	background: white url("images/stardust.png");
 	color: #b2b2b2;
+  padding-bottom:100px;
 }
 .sixthpage {
-	background: white url("images/stardust.png");
+	background: white url("images/brickwall.png");
 	color: #b2b2b2;
+  padding-bottom:100px;
 }
 .seventhpage {
 	background: white url("images/stardust.png");
 	color: #b2b2b2;
+  padding-bottom:100px;
 }
 
 
 .site-wrapper-inner {
-  display: table-cell;
+  display: block;
   vertical-align: top;
+  width:100%;
 }
 .cover-container {
-	margin-right: auto;
-  	margin-left: auto;
+    height:auto;
+    display:inline-block;
+    width:100%;
 }
+
+.picofme {
+  position:absolute;
+  width:600px;
+  left:2%;
+}
+
+.right-side-text {
+  width:auto;
+}
+
+
+
+
 
 /* Padding for spacing */
 .inner {
@@ -177,6 +292,7 @@ p.tagline {
 	background: white url("images/stardust.png");
 	color: #b2b2b2;
 	width:100%;
+  margin-top:-20px;
 }
 
 

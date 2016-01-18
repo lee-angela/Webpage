@@ -52,23 +52,27 @@
 
     <!--script for toggling EYE.SVG -> CLOSEDEYE.svg --> 
     <script type = "text/javascript">
+    	x=0;
           function displayNextImage() {
               x = (x === images.length - 1) ? 0 : x + 1;
-              document.getElementById("mainimg").src = images[x];
+              document.getElementById("mainimg") = images[x];
           }
 
           function displayPreviousImage() {
               x = (x <= 0) ? images.length - 1 : x - 1;
-              document.getElementById("mainimg").src = images[x];
+              document.getElementById("mainimg") = images[x];
           }
 
           function startTimer() {
-              setInterval(displayNextImage, 3000);
+              setInterval(displayNextImage, 20);
           }
 
-          var images = [], x = -1;
-          images[0] = "{% static 'myapp/images/eye.svg' %}" style="width:400px; height:400px";
-          images[1] = "{% static 'myapp/images/closedeye.svg' %}" style="width:400px; height:400px";
+          var images =  new Array();
+          x = 0;
+          images[0] = new Image();
+          images[0].src = "{% static 'myapp/images/eye.svg' %}" style="width:400px; height:400px";
+          images[1] = new Image();
+          images[1].src = "{% static 'myapp/images/closedeye.svg' %}" style="width:400px; height:400px";
       </script>
     <!--end script for toggling main imgs-->
 
@@ -117,12 +121,12 @@
 		        <div class="inner cover">
 		           	<img id="mainimg" src="{% static 'myapp/images/eye.svg' %}" style="width:300px; height:300px">
 		           	<div>
-		           		<button type="button" onclick="displayPreviousImage()">Previous</button>
+		           		<button type="button" onclick="displayPreviousImage()">Previous</button> 
        					<button type="button" onclick="displayNextImage()">Next</button>
 
        				</div>
 
-		           	<p class="tagline"> create | design | code </p>
+		           	<!--<p class="tagline"> create | design | code </p>-->
 
 		           	<hr style="visibility: hidden;" />
 			       	<div class="inner bottomViewport" style="page-break-after:always;">
@@ -137,29 +141,48 @@
 
         
     <!-- BODY/CONTENT of page -->
-	<div class="site-wrapper secondpage" id="aboutme" style="page-break-before:always;">
-		<div class="site-wrapper-inner">
-			<div class="cover-container">
-				<h2> ABOUT ME </h2>
-		        
-			
-				
 
-			</div> <!--end cover-container-->
-        </div> <!--end site-wrapper-inner-->
+	<div class="top-diag-right top-first"> </div>
+    <div class="bottom-diag-right bottom-second"></div>
+
+
+
+	<div class="site-wrapper secondpage" id="aboutme" style="page-break-before:always;">
+			<div class="site-wrapper-inner">
+				<div class="cover-container">
+					<h2 style="height: 50px"> ABOUT ME </h2>
+					<div class="picofme" style="float:left">
+						<img src="{% static 'myapp/images/me.svg' %}" style="width:600px; float: left">
+					</div>
+					<div class="right-side-text" style="float:right">
+						<p> This is some text on the right</p>
+					</div>
+
+					
+				</div>	<!--end cover-container-->
+			</div> <!--end site-wrapper-inner-->
     </div> <!--end site-wrapper second-->
+
+
+    <div class="top-diag-right top-second"> </div>
+    <div class="bottom-diag-right bottom-third"></div>
+
+  
 
     <!-- BODY/CONTENT of page -->
 	<div class="site-wrapper thirdpage" id="productdesign" style="page-break-before:always;">
 		<div class="site-wrapper-inner">
 			<div class="cover-container">
 				<h2> PRODUCT DESIGN </h2>
-		        
+
 
 			</div> <!--end cover-container-->
         </div> <!--end site-wrapper-inner-->
     </div> <!--end site-wrapper second-->
 
+
+    <div class="top-diag-left top-third"> </div>
+    <div class="bottom-diag-left bottom-fourth"></div>
 
 
     <!-- BODY/CONTENT of page -->
@@ -173,6 +196,9 @@
         </div> <!--end site-wrapper-inner-->
     </div> <!--end site-wrapper second-->
 
+
+	<div class="top-diag-right top-fourth"> </div>
+    <div class="bottom-diag-right bottom-fifth"></div>
 
 
     <!-- BODY/CONTENT of page -->
@@ -200,6 +226,9 @@
         </div> <!--end site-wrapper-inner-->
     </div> <!--end site-wrapper second-->
 
+
+    <div class="top-diag-left top-fifth"> </div>
+    <div class="bottom-diag-left bottom-sixth"></div>
 
 
     <!-- BODY/CONTENT of page -->
@@ -242,6 +271,9 @@
     </div> <!--end site-wrapper second-->
 
 
+	<div class="top-diag-right top-sixth"> </div>
+    <div class="bottom-diag-right bottom-seventh"></div>
+
 
     <!-- BODY/CONTENT of page -->
 	<div class="site-wrapper seventhpage" id="contactme" style="page-break-before:always;">
@@ -258,7 +290,7 @@
     <!--FOOTER: in last page-->
 	<div class="footer">
 		<div class="inner">
-			<p>anais angela lee  |  email:anaislee@seas.upenn.edu  |  cell:703-309-1339  |  <a href="#top" style="color: white">scroll to top</a></p>
+			<p>anais angela lee  |  email:anaislee@seas.upenn.edu  |  cell:703-309-1339  |  <a href="#top" style="color: black">scroll to top</a></p>
 		</div>
 	</div> <!--end mastfoot-->
 
