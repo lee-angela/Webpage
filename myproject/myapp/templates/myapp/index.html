@@ -15,9 +15,13 @@
 <head>
 
 	<!--FONTS-->
-	<link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
 
-	<link href='https://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Raleway:300|Monoton' rel='stylesheet' type='text/css'>
+
+	<link href='https://fonts.googleapis.com/css?family=Over+the+Rainbow' rel='stylesheet' type='text/css'>
+
+	<link href='https://fonts.googleapis.com/css?family=Chelsea+Market' rel='stylesheet' type='text/css'>
+
 	<!--END FONTS-->
 
     <meta charset="utf-8">
@@ -26,12 +30,16 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="{% static 'myapp/images/logo.svg' %}">
 
     <title> anais a. lee </title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!--load my stylesheet after bootstrap to override-->
+    <link rel="stylesheet" type="text/css" href="{% static 'myapp/style.css' %}" />
+
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
@@ -79,6 +87,7 @@
 </head>
 
 <body onload = "startTimer()">
+
 	<div class="site-wrapper firstpage" id="top">
 		<div class="site-wrapper-inner">
 			<div class="cover-container">
@@ -119,12 +128,8 @@
 			    </nav> <!--end navigation-->
 
 		        <div class="inner cover">
-		           	<img id="mainimg" src="{% static 'myapp/images/eye.svg' %}" style="width:300px; height:300px">
-		           	<div>
-		           		<button type="button" onclick="displayPreviousImage()">Previous</button> 
-       					<button type="button" onclick="displayNextImage()">Next</button>
-
-       				</div>
+		           	<img id="mainimg" src="{% static 'myapp/images/logos/logo.svg' %}" style="width:400px;">
+		           	
 
 		           	<!--<p class="tagline"> create | design | code </p>-->
 
@@ -142,20 +147,23 @@
         
     <!-- BODY/CONTENT of page -->
 
-	<div class="top-diag-right top-first"> </div>
-    <div class="bottom-diag-right bottom-second"></div>
-
+	<div class="top-diag-left top-first"> </div>
+    <div class="bottom-diag-left bottom-second"></div>
 
 
 	<div class="site-wrapper secondpage" id="aboutme" style="page-break-before:always;">
 			<div class="site-wrapper-inner">
 				<div class="cover-container">
-					<h2 style="height: 50px"> ABOUT ME </h2>
-					<div class="picofme" style="float:left">
-						<img src="{% static 'myapp/images/me.svg' %}" style="width:600px; float: left">
+					<div class="picofme" style="float:left; padding-top:-20px;">
+						<img src="{% static 'myapp/images/me.svg' %}" style="width:700px;">
 					</div>
-					<div class="right-side-text" style="float:right">
-						<p> This is some text on the right</p>
+					<div class="right-side-text" style="float:right; padding-top:400px">
+
+						<h2 style="height: 70px; width:150px; font-family: 'Chelsea Market', cursive; float:left"> about <br> me </h2>
+
+						<p align="left"> Hi there! I'm Angela, and I am currently in my final year at the University of Pennsylvania. This spring I will graduate with a BSE in Digital Media Design, a fusion between Computer Science and Computer Graphics techniques. </p>
+
+						<p align="left"> When I'm not busy coding, I love to create things and travel! I love all things crafting and also love experimenting with photography especially while travelling. I aspire to find that perfect niche incorporating my passions and skills. Keep scrolling to learn more! </p>
 					</div>
 
 					
@@ -168,34 +176,63 @@
     <div class="bottom-diag-right bottom-third"></div>
 
   
-
     <!-- BODY/CONTENT of page -->
 	<div class="site-wrapper thirdpage" id="productdesign" style="page-break-before:always;">
 		<div class="site-wrapper-inner">
 			<div class="cover-container">
-				<h2> PRODUCT DESIGN </h2>
+
+				<div class="left-side-text" style="float:right">
+
+					<h2 style="height: 70px; width:150px; font-family: 'Over the Rainbow', cursive; float:left"> product <br> design </h2>
+
+					<p align="left"> I love to craft and design new products! These projects started off as personal projects, and they grew to something bigger most of the time. I'm continuously learning ways to make a bigger impact with my passions. </p>
+
+					<p align="left"> So far, I have worked with materials such as metals, leather, and graphics. I am focusing on jewelry for now, but hope to create a brand of leather goods in the near future. Below are a few of my favorite examples! </p>
+				</div>
+
+				<div class="right-side-text" align="right" style="padding-top: 500px; right:20%"> 
+					<p> blah blah this is my jewelry </p>
+					<p> find my site here: <img src="{% static 'myapp/images/logos/etsy-icon.png' %}" style="width:50px;"> </p>
+				</div>  
+
 
 
 			</div> <!--end cover-container-->
         </div> <!--end site-wrapper-inner-->
     </div> <!--end site-wrapper second-->
 
-
     <div class="top-diag-left top-third"> </div>
     <div class="bottom-diag-left bottom-fourth"></div>
-
 
     <!-- BODY/CONTENT of page -->
 	<div class="site-wrapper fourthpage" id="code" style="page-break-before:always;">
 		<div class="site-wrapper-inner">
 			<div class="cover-container">
-				<h2> CODE </h2>
-		        
+
+				<div style="position:absolute; width:800px; left:-1%; margin-top:-70px; z-position: 10;" align="left">
+					 <img src="{% static 'myapp/images/laptop.png' %}" style="width:650px;"> 
+
+				</div>
+
+				<div class="left-side-text" style="float:left; padding-top:100px; left:2%;">
+					<a href="https://github.com/anais-lee" style="color: rgb(242, 239, 224); font-family: 'Chelsea Market', cursive; font-size: 15px; text-decoration:none;" target="_blank">
+						<img src="{% static 'myapp/images/logos/github-logo.png' %}" style="width:100px;"> angela's git 
+					</a>
+				</div>
+
+				<div class="right-side-text" style="float:right; padding-top: 100px; right:10%">
+
+					<h2 style="height: 20px; width: 100px; font-family: 'Chelsea Market', cursive; float: left"> code </h2>
+
+		        	<p align="left" style="padding-top: 20px"> I am a Digital Media Design major, and am currently finishing up my last year at University of Pennsylvania. Digital Media Design is a graphics concepts heavy program, but the curriculum consists of all computer programming fundamentals. Strongest languages are Java and C++. </p>
+
+		        	<p align="left"> My public github account can be found at the link to the left. </p>
+
+		        </div>
 
 			</div> <!--end cover-container-->
         </div> <!--end site-wrapper-inner-->
     </div> <!--end site-wrapper second-->
-
 
 	<div class="top-diag-right top-fourth"> </div>
     <div class="bottom-diag-right bottom-fifth"></div>
@@ -205,22 +242,100 @@
 	<div class="site-wrapper fifthpage" id="photography" style="page-break-before:always;">
 		<div class="site-wrapper-inner">
 			<div class="cover-container">
-				<h2> PHOTOGRAPHY </h2>
-				<p> ashdjashdajsdh </p>
-				<p> ashdjashdajsdh </p>
-				<p> ashdjashdajsdh </p>
-				<p> ashdjashdajsdh </p>
-				<p> ashdjashdajsdh </p>
-				<p> ashdjashdajsdh </p>
-				<p> ashdjashdajsdh </p>
-				<p> ashdjashdajsdh </p>
-				<p> ashdjashdajsdh </p>
-				<p> ashdjashdajsdh </p>
-				<p> ashdjashdajsdh </p>
-				<p> ashdjashdajsdh </p>
-				<p> ashdjashdajsdh </p>
-				<p> ashdjashdajsdh </p>
-				<p> ashdjashdajsdh </p>
+
+
+				<div class="left-side-text" style="float:left; padding-top: 200px; right:10%" align="left">
+					
+					<h2 style="height: 50px; font-family: 'Over the Rainbow', cursive;"> photography </h2>
+
+					<p align="left"> I'm intrigued by interesting compositions and capturing moments. I love taking pictures while I travel but also of my beautiful everyday surroundings. Here are some of my favorite photos I took of a bunch of different places with a bunch of different feels. Hover over any to learn more! 
+				</div>
+
+				<div class="photos-only" >
+
+					<table style="width:100%" >
+						<tr align="center" style="width:100%;"> 
+							<td > <img src="{% static 'myapp/images/photography/lavanderia.jpg' %}" style="width:544px;"> </td>
+							<td > <img src="{% static 'myapp/images/photography/puddle.jpg' %}" style="width:546px;"> </td>
+						</tr>
+					</table>
+
+					<table style="width:100%" >
+						<tr align="center">
+							<td> <img src="{% static 'myapp/images/photography/boys.jpg' %}" style="width:533px;"> </td>
+							<td> <img src="{% static 'myapp/images/photography/hiddenfaces.jpg' %}" style="width:557px;"> </td>
+						</tr>
+					</table>
+
+
+					<table style="width:100%" >
+						<tr align="center" style="width:100%; ">
+							<td> <img src="{% static 'myapp/images/photography/bridge.jpg' %}" style="width:515px;"> </td>
+							<td> <img src="{% static 'myapp/images/photography/catbike.jpg' %}" style="width:576px;"> </td>
+						</tr>
+					</table>
+
+					<table style="width:100%" >
+						<tr align="center">
+							<td> <img src="{% static 'myapp/images/photography/fruits.jpg' %}" style="width:496px;"> </td>
+							<td> <img src="{% static 'myapp/images/photography/oranges.jpg' %}" style="width:595px;"> </td>
+						</tr>
+					</table>
+
+					<table style="width:100%" >
+						<tr align="center">
+							<td> <img src="{% static 'myapp/images/photography/cabs.jpg' %}" style="width:546px;"> </td>
+							<td> <img src="{% static 'myapp/images/photography/cabdriver.jpg' %}" style="width:546px;"> </td>
+						</tr>
+					</table>
+
+
+					<table style="width:100%" >
+						<tr align="center">
+							<td> <img src="{% static 'myapp/images/photography/phillycranes.jpg' %}" style="width:477px;"> </td>
+							<td> <img src="{% static 'myapp/images/photography/greenhouse.png' %}" style="width:616px;"> </td>
+						</tr>
+					</table>
+
+					<table style="width:100%" >
+						<tr align="center">
+							<td> <img src="{% static 'myapp/images/photography/graffitibikes.jpg' %}" style="width:574px;"> </td>
+							<td> <img src="{% static 'myapp/images/photography/underwatereyes.jpg' %}" style="width:519px;"> </td>
+						</tr>
+					</table>
+
+					
+					<table style="width:100%" >
+						<tr align="center">
+							<td> <img src="{% static 'myapp/images/photography/pastelhouses.jpg' %}" style="width:577px;"> </td>
+							<td> <img src="{% static 'myapp/images/photography/cinqueterre.jpg' %}" style="width:514px;"> </td>
+						</tr>
+					</table>
+
+					<table style="width:100%" >
+						<tr align="center">
+							<td> <img src="{% static 'myapp/images/photography/doorway.jpg' %}" style="width:564px;"> </td>
+							<td> <img src="{% static 'myapp/images/photography/nightmarket.jpg' %}" style="width:525px;"> </td>
+						</tr>
+					</table>
+
+					<table style="width:100%" >
+						<tr align="center">
+							<td> <img src="{% static 'myapp/images/photography/dyedwool.jpg' %}" style="width:543px;"> </td>
+							<td> <img src="{% static 'myapp/images/photography/lamps.jpg' %}" style="width:543px;"> </td>
+						</tr>
+					</table>
+
+					
+
+					<table style="width:100%" >
+						<tr align="center">
+							<td> <img src="{% static 'myapp/images/photography/minivan.jpg' %}" style="width:543px;"> </td>
+							<td> <img src="{% static 'myapp/images/photography/donkey.jpg' %}" style="width:543px;"> </td>
+						</tr>
+					</table>
+
+				</div>
 
 			</div> <!--end cover-container-->
         </div> <!--end site-wrapper-inner-->
@@ -235,35 +350,21 @@
 	<div class="site-wrapper sixthpage" id="finearts" style="page-break-before:always;">
 		<div class="site-wrapper-inner">
 			<div class="cover-container">
-				<h2> FINE ARTS </h2>
-				<p> ashdjashdajsdh </p>
-				<p> ashdjashdajsdh </p>
-				<p> ashdjashdajsdh </p>
 
-				<p> ashdjashdajsdh </p>
-				<p> ashdjashdajsdh </p>
-				<p> ashdjashdajsdh </p>
-				<p> ashdjashdajsdh </p>
-				<p> ashdjashdajsdh </p>
-				<p> ashdjashdajsdh </p>
-				<p> ashdjashdajsdh </p>
-				<p> ashdjashdajsdh </p>
-				<p> ashdjashdajsdh </p>
-				<p> ashdjashdajsdh </p>
-				<p> ashdjashdajsdh </p>
+				<div class="collage">
+					<img src="{% static 'myapp/images/collage.png' %}" style="width:950px;">
+				</div>
 
-				<p> ashdjashdajsdh </p>
-				<p> ashdjashdajsdh </p>
-				<p> ashdjashdajsdh </p>
-				<p> ashdjashdajsdh </p>
-				<p> ashdjashdajsdh </p>
-				<p> ashdjashdajsdh </p>
-				<p> ashdjashdajsdh </p>
-				<p> ashdjashdajsdh </p>
-				<p> ashdjashdajsdh </p>
-				<p> ashdjashdajsdh </p>
-				<p> ashdjashdajsdh </p>
-				<p> ashdjashdajsdh </p>
+				<div class="right-side-text" style="float:right; right:7%; width:425px; padding-top: 400px">
+
+					<h2 style="height: 70px; width:220px; font-family: 'Chelsea Market', cursive; float:left; padding-right:10px" align="right">  miscellanous <br>art </h2>
+
+					<p align="left"> In addition to crafting, I work with traditional mediums of art such as paint, graphite, mixed media, and even clay. I also did quite a bit of 3D modeling using Autodesk Maya and Mudbox along with some hand-drawn animations, and my reel can be found right below. Additionally below are a few examples of my work I have accumulated throughout the years. </p>
+				</div>
+
+				<div class="demo-reel" style="padding-top:700px;">
+					<iframe src="https://player.vimeo.com/video/116486282" width="800" height="452" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/116486282">Angela&#039;s Reel January 2015</a> from <a href="https://vimeo.com/user35750132">Angela Lee</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+				</div>
 
 
 			</div> <!--end cover-container-->
@@ -278,9 +379,14 @@
     <!-- BODY/CONTENT of page -->
 	<div class="site-wrapper seventhpage" id="contactme" style="page-break-before:always;">
 		<div class="site-wrapper-inner">
-			<div class="cover-container">
-				<h2> CONTACT ME </h2>
-		        
+			<div class="cover-container" align="center">
+
+					<h2 style="height: 50px; width:500px; font-family: 'Over the Rainbow', cursive;"> contact me </h2>
+
+					<p align="center" style="width:300px"> Feel free to contact me if you have questions or just want to talk - I'd love to chat!
+					<br>
+					<p align="left" style="width:300px; padding-left:40px;"><br> <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> email: anaislee@seas.upenn.edu
+					<br> <span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span>  cell: (703) 309 - 1339</p>   	
 
 
 			</div> <!--end cover-container-->
@@ -290,6 +396,8 @@
     <!--FOOTER: in last page-->
 	<div class="footer">
 		<div class="inner">
+			<img id="mainimg" src="{% static 'myapp/images/logos/logo.svg' %}" style="width:150px; padding-bottom:20px;">
+
 			<p>anais angela lee  |  email:anaislee@seas.upenn.edu  |  cell:703-309-1339  |  <a href="#top" style="color: black">scroll to top</a></p>
 		</div>
 	</div> <!--end mastfoot-->
@@ -309,10 +417,6 @@
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
  
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-
-	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-
-
 
 	
 	
@@ -342,6 +446,29 @@
 	        }
 	    });
     </script>
+
+
+    <!-- Parallax scrolling-->
+    <script>
+	// init controller
+	var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onEnter", duration: "200%"}});
+
+	// build scenes
+	new ScrollMagic.Scene({triggerElement: "#parallax1"})
+					.setTween("#parallax1 > div", {y: "80%", ease: Linear.easeNone})
+					.addIndicators()
+					.addTo(controller);
+
+	new ScrollMagic.Scene({triggerElement: "#parallax2"})
+					.setTween("#parallax2 > div", {y: "80%", ease: Linear.easeNone})
+					.addIndicators()
+					.addTo(controller);
+
+	new ScrollMagic.Scene({triggerElement: "#parallax3"})
+					.setTween("#parallax3 > div", {y: "80%", ease: Linear.easeNone})
+					.addIndicators()
+					.addTo(controller);
+</script>
 	
 
 </body>
