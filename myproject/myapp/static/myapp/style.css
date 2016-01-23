@@ -91,28 +91,28 @@ p.tagline {
   background: rgb(242, 239, 224);
 }
 .bottom-second {
-    background: rgb(180, 185, 151);
+    background: rgb(208, 190, 118);
 }
 
 /* between second and third pages*/
 .top-second {
-  background: rgb(180, 185, 151);
+  background: rgb(208, 190, 118);
 }
 .bottom-third {
-    background: rgb(208, 190, 118);
+    background: rgb(196, 141, 116);
 }
 
 /* between third and fourth pages*/
 .top-third {
-  background: rgb(208, 190, 118);
+  background: rgb(196, 141, 116);
 }
 .bottom-fourth {
-    background: rgb(196, 141, 116);
+    background: rgb(180, 185, 151);
 }
 
 /* between fourth and fifth pages*/
 .top-fourth {
-  background: rgb(196, 141, 116);
+  background: rgb(180, 185, 151);
 }
 .bottom-fifth {
     background: rgb(66, 66, 66);
@@ -123,15 +123,15 @@ p.tagline {
   background: rgb(66, 66, 66);
 }
 .bottom-sixth {
-    background: rgb(242, 239, 224);
+    background: rgb(208, 190, 118);
 }
 
 /* between sixth and seventh pages*/
 .top-sixth {
-  background: rgb(242, 239, 224);
+  background: rgb(208, 190, 118);
 }
 .bottom-seventh {
-    background: rgb(208, 190, 118);
+    background: rgb(242, 239, 224);
 }
 
 
@@ -157,48 +157,47 @@ p {
 .firstpage {
 	background:  rgb(242, 239, 224);
 	color: rgb(66, 66, 66);
-  padding-bottom: 200px
+  padding-bottom: 0px
 }
 .secondpage {
-	background: rgb(180, 185, 151);
+	background: rgb(208, 190, 118);
 	color: rgb(66, 66, 66);
   z-index:10;
   float:center;
   width:100%;  
-  padding-bottom:850px;
+  padding-bottom:800px;
   padding-top:0;
 }
 
 .thirdpage {
-	background: rgb(208, 190, 118);
+	background: rgb(196, 141, 116);
 	color: rgb(66, 66, 66);
   padding-top: 100px;
   padding-bottom:900px;
 }
 
 .fourthpage {
-	background: rgb(196, 141, 116);
+	background: rgb(180, 185, 151);
 	color: rgb(66, 66, 66);
-  padding-top: 110px;
-  padding-bottom:800px;
+  padding-top: 130px;
+  padding-bottom:900px;
 }
 .fifthpage {
 	background: rgb(66, 66, 66);
 	color: rgb(242, 239, 224);
   padding-top: 100px;
-  padding-bottom:5000px;
+  padding-bottom:4800px;
 }
 .sixthpage {
-	background: rgb(242, 239, 224);
-	color: rgb(66, 66, 66);
-  padding-top: 40px;
-  padding-bottom:900px;
-}
-.seventhpage {
 	background: rgb(208, 190, 118);
 	color: rgb(66, 66, 66);
+  padding-top: 40px;
+  padding-bottom:350px;
+}
+.seventhpage {
+	background: rgb(242, 239, 224);
+	color: rgb(66, 66, 66);
   padding-top: 100px;
-  padding-bottom:200px;
 }
 
 
@@ -253,7 +252,7 @@ p {
 
 .photos-only {
   position:absolute;
-  padding-top:400px;
+  padding-top:200px;
   width:97%;
   left:1.5%;
   text-align: center;
@@ -271,6 +270,39 @@ td,img {
   margin:0px; 
   display: inline-block;
 }
+
+.imgwrap {
+  position: relative;
+}
+
+p.imgDescription {
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:0;
+  text-align:center;
+  padding-top:30%;
+  background:black;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+
+  visibility:hidden;
+  opacity:0;
+}
+
+.imgwrap:hover .imgDescription {
+  visibility: visible;
+  opacity: 0.75;
+  -webkit-transition: all .8s linear;
+       -moz-transition: all .8s linear;
+        -ms-transition: all .8s linear;
+         -o-transition: all .8s linear;
+            transition: all .8s linear;
+}
+
+
 
 
 /* Padding for spacing */
@@ -360,10 +392,9 @@ td,img {
  */
 
 .footer {
-	background: rgb(208, 190, 118);
+	background: rgb(242, 239, 224);
   color:rgb(66, 66, 66);
 	width:100%;
-  margin-top:-20px;
 }
 
 

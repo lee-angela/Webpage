@@ -22,6 +22,8 @@
 
 	<link href='https://fonts.googleapis.com/css?family=Chelsea+Market' rel='stylesheet' type='text/css'>
 
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
 	<!--END FONTS-->
 
     <meta charset="utf-8">
@@ -40,6 +42,8 @@
     <!--load my stylesheet after bootstrap to override-->
     <link rel="stylesheet" type="text/css" href="{% static 'myapp/style.css' %}" />
 
+    <!--hover stylesheet-->
+    <link href="{% static 'myapp/hover.css' %}" rel="stylesheet" media="all">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
@@ -118,7 +122,7 @@
 			                <a href="#photography" onclick = $("#menu-toggle").click(); ><span class="glyphicon glyphicon-camera" aria-hidden="true"></span>  photography</a>
 			            </li>
 			            <li class="links l6">
-			            	<a href="#finearts" onclick = $("#menu-toggle").click(); ><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  fine arts</a>
+			            	<a href="#finearts" onclick = $("#menu-toggle").click(); ><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  other arts</a>
 			            </li>
 			            <li class="links l7">
 			            	<a href="#contactme" onclick = $("#menu-toggle").click(); ><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>  contact me </a>
@@ -128,15 +132,19 @@
 			    </nav> <!--end navigation-->
 
 		        <div class="inner cover">
-		           	<img id="mainimg" src="{% static 'myapp/images/logos/logo.svg' %}" style="width:400px;">
+		        	<a href="#" class="button hvr-buzz-out">
+		           		<img id="mainimg" src="{% static 'myapp/images/logos/logo.svg' %}" style="width:300px; margin-top:-20px;">
+		           	</a>
 		           	
 
 		           	<!--<p class="tagline"> create | design | code </p>-->
 
-		           	<hr style="visibility: hidden;" />
-			       	<div class="inner bottomViewport" style="page-break-after:always;">
-				   		<span style="font-size:1.5em; color: #b2b2b2;" class="glyphicon glyphicon-chevron-down"></span>
-			        </div>
+			        <div style="padding-top: 200px">
+
+					<a href="#aboutme" class="button hvr-pulse-grow" style="page-break-after:always;">
+						<span style="font-size:1.5em; color: #b2b2b2;" class="glyphicon glyphicon-chevron-down"></span>
+					</a>
+				</div>
 		        </div> <!-- end inner cover-->
 
     		</div> <!-- end cover-container-->
@@ -155,16 +163,16 @@
 			<div class="site-wrapper-inner">
 				<div class="cover-container">
 					<div class="picofme" style="float:left; padding-top:-20px;">
-						<img src="{% static 'myapp/images/me.svg' %}" style="width:700px;">
+							<img src="{% static 'myapp/images/me.svg' %}" style="width:700px;" class="hvr-rotate-left">
 					</div>
-					<div class="right-side-text" style="float:right; padding-top:400px">
+					<div class="right-side-text" style="float:right; padding-top:350px">
 
 						<h2 style="height: 70px; width:150px; font-family: 'Chelsea Market', cursive; float:left"> about <br> me </h2>
 
-						<p align="left"> Hi there! I'm Angela, and I am currently in my final year at the University of Pennsylvania. This spring I will graduate with a BSE in Digital Media Design, a fusion between Computer Science and Computer Graphics techniques. </p>
+						<p align="left"> Hi there! I'm Angela, and I am currently in my final year at the University of Pennsylvania. This spring I will graduate with a BSE in Digital Media Design, a fusion between Computer Science and Computer Graphics. </p>
 
-						<p align="left"> When I'm not busy coding, I love to create things and travel! I love all things crafting and also love experimenting with photography especially while travelling. I aspire to find that perfect niche incorporating my passions and skills. Keep scrolling to learn more! </p>
-					</div>
+						<p align="left"> When I'm not busy coding, I love to create things and travel! I adore anything that involves crafting and designing something new, and also enjoy experimenting with photography. Though these things only scratch the surface of who I am, I'd say they capture the essence of my passions - keep scrolling to learn more! </p>
+					</div> 
 
 					
 				</div>	<!--end cover-container-->
@@ -192,7 +200,7 @@
 
 				<div class="right-side-text" align="right" style="padding-top: 500px; right:20%"> 
 					<p> blah blah this is my jewelry </p>
-					<p> find my site here: <img src="{% static 'myapp/images/logos/etsy-icon.png' %}" style="width:50px;"> </p>
+					<p> find my site here: <a href="https://www.etsy.com/shop/BetterinGold" target="_blank"><img src="{% static 'myapp/images/logos/etsy-icon.png' %}" style="width:50px;"> </a></p>
 				</div>  
 
 
@@ -210,13 +218,13 @@
 			<div class="cover-container">
 
 				<div style="position:absolute; width:800px; left:-1%; margin-top:-70px; z-position: 10;" align="left">
-					 <img src="{% static 'myapp/images/laptop.png' %}" style="width:650px;"> 
+					 	<img src="{% static 'myapp/images/laptop.png' %}" style="width:650px;"> 
 
 				</div>
 
 				<div class="left-side-text" style="float:left; padding-top:100px; left:2%;">
-					<a href="https://github.com/anais-lee" style="color: rgb(242, 239, 224); font-family: 'Chelsea Market', cursive; font-size: 15px; text-decoration:none;" target="_blank">
-						<img src="{% static 'myapp/images/logos/github-logo.png' %}" style="width:100px;"> angela's git 
+					<a href="https://github.com/anais-lee" style="color: rgb(242, 239, 224); font-family: 'Chelsea Market', cursive; font-size: 15px; text-decoration:none;" target="_blank" class="button hvr-buzz-out">
+						<img src="{% static 'myapp/images/logos/github-logo.png' %}" style="width:70px;"> angela's git 
 					</a>
 				</div>
 
@@ -224,9 +232,9 @@
 
 					<h2 style="height: 20px; width: 100px; font-family: 'Chelsea Market', cursive; float: left"> code </h2>
 
-		        	<p align="left" style="padding-top: 20px"> I am a Digital Media Design major, and am currently finishing up my last year at University of Pennsylvania. Digital Media Design is a graphics concepts heavy program, but the curriculum consists of all computer programming fundamentals. Strongest languages are Java and C++. </p>
+		        	<p align="left" style="padding-top: 20px"> I'm a Digital Media Design major and am currently finishing up my last year at University of Pennsylvania. Digital Media Design combines computer science fundamentals with a focus on computer graphics techniques. Strongest languages are Java and C++. </p>
 
-		        	<p align="left"> My public github account can be found at the link to the left. </p>
+		        	<p align="left"> My public github account can be found at the link to the left. Source code for this site can be found under the Repo titled "Webpage." </p>
 
 		        </div>
 
@@ -243,86 +251,215 @@
 		<div class="site-wrapper-inner">
 			<div class="cover-container">
 
+				<div style="position:absolute; width:700px; right:2%; margin-top:-70px; z-position: 10;" align="right">
+					<img src="{% static 'myapp/images/photography/camera.svg' %}" style="width:650px; color:rgb(242, 239, 224)" class="hvr-rotate"> 
+				</div>
 
-				<div class="left-side-text" style="float:left; padding-top: 200px; right:10%" align="left">
+				<div class="left-side-text" style="float:left; padding-top: 250px; padding-bottom:50px; right:10%" align="left">
 					
 					<h2 style="height: 50px; font-family: 'Over the Rainbow', cursive;"> photography </h2>
 
-					<p align="left"> I'm intrigued by interesting compositions and capturing moments. I love taking pictures while I travel but also of my beautiful everyday surroundings. Here are some of my favorite photos I took of a bunch of different places with a bunch of different feels. Hover over any to learn more! 
+					<p align="left"> I'm intrigued by interesting compositions and capturing moments. I love taking pictures while I travel but also of my beautiful everyday surroundings. Here are some of my favorite photos I took of a bunch of different places with a bunch of different feels. Hover over any image to learn more! 
+				</div>
+
+				<div style="padding-top: 490px">
+					<a href="#photo-section" class="button hvr-pulse-grow">
+						<span style="font-size:1.5em; color: #b2b2b2;" class="glyphicon glyphicon-chevron-down"></span>
+					</a>
 				</div>
 
 				<div class="photos-only" >
-
-					<table style="width:100%" >
+					<table id="photo-section" style="width:100%" >
 						<tr align="center" style="width:100%;"> 
-							<td > <img src="{% static 'myapp/images/photography/lavanderia.jpg' %}" style="width:544px;"> </td>
-							<td > <img src="{% static 'myapp/images/photography/puddle.jpg' %}" style="width:546px;"> </td>
+							<td > 
+								<div class="imgwrap" style="width:544px; height:auto;">
+									<img src="{% static 'myapp/images/photography/lavanderia.jpg' %}" style="width:544px;" class="darken">
+									<p class="imgDescription"> "LAVANDERIA" <br> MADRID, SPAIN. 2015. </p>
+								</div>
+					 		</td>
+							<td > 
+								<div class="imgwrap" style="width:546px; height:auto;">
+									<img src="{% static 'myapp/images/photography/puddle.jpg' %}" style="width:546px;"> 
+									<p class="imgDescription"> "POV" <br>
+										PHILADELPHIA, PA. 2014. </p>
+								</div>
+							</td>
 						</tr>
 					</table>
 
 					<table style="width:100%" >
 						<tr align="center">
-							<td> <img src="{% static 'myapp/images/photography/boys.jpg' %}" style="width:533px;"> </td>
-							<td> <img src="{% static 'myapp/images/photography/hiddenfaces.jpg' %}" style="width:557px;"> </td>
+							<td> 
+								<div class="imgwrap" style="width:533px; height:auto;">
+									<img src="{% static 'myapp/images/photography/boys.jpg' %}" style="width:533px;">
+									<p class="imgDescription">"TOGETHER" <br>
+									MARRAKESH, MOROCCO. 2015. </p>
+								</div> 
+							</td>
+							<td> 
+								<div class="imgwrap" style="width:557px; height:auto;">
+									<img src="{% static 'myapp/images/photography/hiddenfaces.jpg' %}" style="width:557px;"> 
+									<p class="imgDescription"> "REPLACE, REPEAT" <br>
+										MADRID, SPAIN. 2015. </p>
+								</div>
+							</td>
 						</tr>
 					</table>
 
 
 					<table style="width:100%" >
 						<tr align="center" style="width:100%; ">
-							<td> <img src="{% static 'myapp/images/photography/bridge.jpg' %}" style="width:515px;"> </td>
-							<td> <img src="{% static 'myapp/images/photography/catbike.jpg' %}" style="width:576px;"> </td>
+							<td> 
+								<div class="imgwrap" style="width:515px; height:auto;">
+									<img src="{% static 'myapp/images/photography/bridge.jpg' %}" style="width:515px;"> 
+									<p class="imgDescription"> "ON THE WAY" <br> 
+										PHILADELPHIA, PA. 2013.</p>
+								</div>
+							</td>
+							<td> 
+								<div class="imgwrap" style="width:576px; height:auto;">
+									<img src="{% static 'myapp/images/photography/catbike.jpg' %}" style="width:576px;"> 
+									<p class="imgDescription">"1/100" <br> 
+										MARRAKESH, MOROCCO. 2015. </p>
+								</div>
+							</td>
 						</tr>
 					</table>
 
 					<table style="width:100%" >
 						<tr align="center">
-							<td> <img src="{% static 'myapp/images/photography/fruits.jpg' %}" style="width:496px;"> </td>
-							<td> <img src="{% static 'myapp/images/photography/oranges.jpg' %}" style="width:595px;"> </td>
+							<td> 
+								<div class="imgwrap" style="width:496px; height:auto;">
+									<img src="{% static 'myapp/images/photography/fruits.jpg' %}" style="width:496px;"> 
+									<p class="imgDescription">"PER KILO." <br> 
+									BOLOGNA, ITALY. 2015. </p>
+								</div>
+							</td>
+							<td> 
+								<div class="imgwrap" style="width:595px; height:auto;">
+									<img src="{% static 'myapp/images/photography/oranges.jpg' %}" style="width:595px;"> 
+									<p class="imgDescription">"YELLOW ORANGE" <br> 
+										MARRAKESH, MOROCCO. 2015. </p>
+								</div>
+								
+							</td>
 						</tr>
 					</table>
 
 					<table style="width:100%" >
 						<tr align="center">
-							<td> <img src="{% static 'myapp/images/photography/cabs.jpg' %}" style="width:546px;"> </td>
-							<td> <img src="{% static 'myapp/images/photography/cabdriver.jpg' %}" style="width:546px;"> </td>
+							<td> 
+								<div class="imgwrap" style="width:546px; height:auto;">
+									<img src="{% static 'myapp/images/photography/cabs.jpg' %}" style="width:546px;"> 
+									<p class="imgDescription">"SO FULL BUT ALL EMPTY" <br>
+										MARRAKESH, MORROCO. 2015. </p>
+								</div>
+							</td>
+							<td> 
+								<div class="imgwrap" style="width:546px; height:auto;">
+									<img src="{% static 'myapp/images/photography/cabdriver.jpg' %}" style="width:546px;"> 
+									<p class="imgDescription">"ANOTHER DRIVER" <br>
+										MARRAKESH, MORROCO. 2015. </p>
+								</div>
+							</td>
 						</tr>
 					</table>
 
 
 					<table style="width:100%" >
 						<tr align="center">
-							<td> <img src="{% static 'myapp/images/photography/phillycranes.jpg' %}" style="width:477px;"> </td>
-							<td> <img src="{% static 'myapp/images/photography/greenhouse.png' %}" style="width:616px;"> </td>
+							<td>
+								<div class="imgwrap" style="width:477px; height:auto;">
+									<img src="{% static 'myapp/images/photography/phillycranes.jpg' %}" style="width:477px;"> 
+									<p class="imgDescription">"LINES" <br>
+										PHILADELPHIA, PA. 2015. </p>
+								</div>
+							</td>
+							<td> 
+								<div class="imgwrap" style="width:616px; height:auto;">
+									<img src="{% static 'myapp/images/photography/greenhouse.png' %}" style="width:616px;"> 
+									<p class="imgDescription"> "HAVEN" <br>
+										PHILADELPHIA, PA. 2014. </p>
+								</div>
+							</td>
 						</tr>
 					</table>
 
 					<table style="width:100%" >
 						<tr align="center">
-							<td> <img src="{% static 'myapp/images/photography/graffitibikes.jpg' %}" style="width:574px;"> </td>
-							<td> <img src="{% static 'myapp/images/photography/underwatereyes.jpg' %}" style="width:519px;"> </td>
+							<td> 
+								<div class="imgwrap" style="width:574px; height:auto;">
+									<img src="{% static 'myapp/images/photography/graffitibikes.jpg' %}" style="width:574px;"> 
+									<p class="imgDescription"> "IN THIS CITY" <br>
+										MADRID, SPAIN. 2015. </p>
+								</div>
+							</td>
+							<td> 
+								<div class="imgwrap" style="width:519px; height:auto;">
+									<img src="{% static 'myapp/images/photography/underwatereyes.jpg' %}" style="width:519px;">
+									<p class="imgDescription">"PEOPLE WATCHING" <br>
+										MADRID, SPAIN. 2015. </p>
+								</div>
+							</td>
 						</tr>
 					</table>
 
 					
 					<table style="width:100%" >
 						<tr align="center">
-							<td> <img src="{% static 'myapp/images/photography/pastelhouses.jpg' %}" style="width:577px;"> </td>
-							<td> <img src="{% static 'myapp/images/photography/cinqueterre.jpg' %}" style="width:514px;"> </td>
+							<td> 
+								<div class="imgwrap" style="width:577px; height:auto;">
+									<img src="{% static 'myapp/images/photography/pastelhouses.jpg' %}" style="width:577px;"> 
+									<p class="imgDescription">"SOUTH" <br> 
+										PHILADELPHIA, PA. 2015. </p>
+								</div>
+							</td>
+							<td> 
+								<div class="imgwrap" style="width:514px; height:auto;">
+									<img src="{% static 'myapp/images/photography/cinqueterre.jpg' %}" style="width:514px;"> 
+									<p class="imgDescription"> "JUST LIKE PINTEREST" <br> 
+										CINQUE TERRE, ITALY. 2015. </p>
+								</div>
+							</td>
 						</tr>
 					</table>
 
 					<table style="width:100%" >
 						<tr align="center">
-							<td> <img src="{% static 'myapp/images/photography/doorway.jpg' %}" style="width:564px;"> </td>
-							<td> <img src="{% static 'myapp/images/photography/nightmarket.jpg' %}" style="width:525px;"> </td>
+							<td> 
+								<div class="imgwrap" style="width:564px; height:auto;">
+									<img src="{% static 'myapp/images/photography/doorway.jpg' %}" style="width:564px;"> 
+									<p class="imgDescription"> "BLINDING HEAT, BLINDING COLORS" <br> 
+										MARRAKESH, MOROCCO. 2015. </p>
+								</div>
+							</td>
+							<td> 
+								<div class="imgwrap" style="width:525px; height:auto;">
+									<img src="{% static 'myapp/images/photography/nightmarket.jpg' %}" style="width:525px;"> 
+									<p class="imgDescription">"DINNER" <br> 
+									MARRAKESH, MOROCCO. 2015.</p>
+								</div>
+							</td>
 						</tr>
 					</table>
 
 					<table style="width:100%" >
 						<tr align="center">
-							<td> <img src="{% static 'myapp/images/photography/dyedwool.jpg' %}" style="width:543px;"> </td>
-							<td> <img src="{% static 'myapp/images/photography/lamps.jpg' %}" style="width:543px;"> </td>
+							<td> 
+								<div class="imgwrap" style="width:543px; height:auto;">
+									<img src="{% static 'myapp/images/photography/dyedwool.jpg' %}" style="width:543px;"> 
+									<p class="imgDescription">"WOOL DYE" <br> 
+										MARRAKESH, MOROCCO. 2015. </p>
+								</div>
+
+							</td>
+							<td> 
+								<div class="imgwrap" style="width:543px; height:auto;">
+									<img src="{% static 'myapp/images/photography/lamps.jpg' %}" style="width:543px;"> 
+									<p class="imgDescription">"ENDLESS" <br> 
+										MARRAKESH, MOROCCO. 2015. </p>
+								</div>
+							</td>
 						</tr>
 					</table>
 
@@ -330,8 +467,20 @@
 
 					<table style="width:100%" >
 						<tr align="center">
-							<td> <img src="{% static 'myapp/images/photography/minivan.jpg' %}" style="width:543px;"> </td>
-							<td> <img src="{% static 'myapp/images/photography/donkey.jpg' %}" style="width:543px;"> </td>
+							<td> 
+								<div class="imgwrap" style="width:543px; height:auto;">
+									<img src="{% static 'myapp/images/photography/minivan.jpg' %}" style="width:543px;"> 
+									<p class="imgDescription">"MIX & MATCH" <br> 
+										MARRAKESH, MOROCCO. 2015. </p>
+								</div>
+							</td>
+							<td> 
+								<div class="imgwrap" style="width:543px; height:auto;">
+									<img src="{% static 'myapp/images/photography/donkey.jpg' %}" style="width:543px;"> 
+									<p class="imgDescription">"TRANSPORT" <br> 
+										MARRAKESH, MOROCCO. 2015. </p>
+								</div>
+							</td>
 						</tr>
 					</table>
 
@@ -352,18 +501,150 @@
 			<div class="cover-container">
 
 				<div class="collage">
-					<img src="{% static 'myapp/images/collage.png' %}" style="width:950px;">
+					<a href="#" class="button hvr-shrink">
+						<img src="{% static 'myapp/images/collage.png' %}" style="width:950px;">
+					</a>
 				</div>
 
 				<div class="right-side-text" style="float:right; right:7%; width:425px; padding-top: 400px">
 
 					<h2 style="height: 70px; width:220px; font-family: 'Chelsea Market', cursive; float:left; padding-right:10px" align="right">  miscellanous <br>art </h2>
 
-					<p align="left"> In addition to crafting, I work with traditional mediums of art such as paint, graphite, mixed media, and even clay. I also did quite a bit of 3D modeling using Autodesk Maya and Mudbox along with some hand-drawn animations, and my reel can be found right below. Additionally below are a few examples of my work I have accumulated throughout the years. </p>
+					<p align="left"> In addition to crafting, I work with traditional mediums of art such as paint, graphite, mixed media, and even clay. I also did quite a bit of 3D modeling using Autodesk Maya and Mudbox along with some hand-drawn animations, and my reel can be found right below. Additionally below are a few examples of my work I have accumulated throughout the years. Play the videos or hover over images to learn more! </p>
 				</div>
 
-				<div class="demo-reel" style="padding-top:700px;">
-					<iframe src="https://player.vimeo.com/video/116486282" width="800" height="452" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/116486282">Angela&#039;s Reel January 2015</a> from <a href="https://vimeo.com/user35750132">Angela Lee</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+				<div style="padding-top: 580px; padding-bottom:200px;">
+					<a href="#theart" class="button hvr-pulse-grow">
+						<span style="font-size:1.5em; color: rgb(242, 239, 224);" class="glyphicon glyphicon-chevron-down"></span>
+					</a>
+				</div>
+
+				<div id="theart" style="width:1200px; position: relative; float:center; margin-left:-16%;">
+					<table style="width:1200px">
+						<tr align="center">
+							<td style="padding:10px;">
+									<iframe src="https://player.vimeo.com/video/115413890" width="535px" height="350px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+
+									<p><a href="https://vimeo.com/115413890">3D Elephant Model</a> from <a href="https://vimeo.com/user35750132" target="_blank">Angela Lee</a> on <a href="https://vimeo.com" target="_blank">Vimeo</a>. <br> 
+									Model created using Autodesk Maya and Mudbox. </p>
+							</td>
+
+							<td style="padding:10px;"> 
+									<iframe src="https://player.vimeo.com/video/115320279" width="535px" height="350px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+
+									<p><a href="https://vimeo.com/115320279">What If?</a> from <a href="https://vimeo.com/user35750132" target="_blank">Angela Lee</a> on <a href="https://vimeo.com" target="_blank">Vimeo</a>.<br>
+
+									This hand-drawn animation created using TVPaint. </p>
+							</td>
+						</tr>
+					</table>
+
+					<table style="width:1200px">
+						<tr align="center">
+							<td style="padding:10px;">
+								<div class="imgwrap" style="width:543px; height:auto;">
+									<img src="{% static 'myapp/images/artwork/bananaspider.gif' %}" style="width:543px;"> 
+									<p class="imgDescription">"BANANA-SPIDER" <br> 
+										A HAND_DRAWN ANIMATION. 2014. </p>
+								</div>
+							</td>
+
+							<td style="padding:10px;"> 
+								<div class="imgwrap" style="width:543px; height:auto;">
+									<img src="{% static 'myapp/images/artwork/mag.jpg' %}" style="width:543px;"> 
+									<p class="imgDescription"> MAGAZINE SPREAD LAYOUT DESIGN <br> 
+										THE Walk, UNIVERSITY OF PENNSYLVANIA. 2015. </p>
+								</div>
+							</td>
+						</tr>
+					</table>
+
+					<table style="width:1200px">
+						<tr align="center">
+							<td style="padding:10px;">
+								<div class="imgwrap" style="width:531px; height:auto;">
+									<img src="{% static 'myapp/images/artwork/cafe.jpg' %}" style="width:531px;"> 
+									<p class="imgDescription">"CARPENTER & COOK CAFE 3D MODEL" <br> 
+										CREATED IN AUTODESK MAYA & MUDBOX. 2014. </p>
+								</div>
+							</td>
+
+							<td style="padding:10px;"> 
+								<div class="imgwrap" style="width:559; height:auto;">
+									<img src="{% static 'myapp/images/artwork/rightfan.jpg' %}" style="width:257px;"> 
+									<img src="{% static 'myapp/images/artwork/sidefan.jpg' %}" style="width:298px;"> 
+									<p class="imgDescription"> RETRO FAN 3D MODEL <br> 
+										CREATED IN AUTODESK MAYA. 2014. </p>
+								</div>
+							</td>
+						</tr>
+					</table>
+
+
+					
+					<table style="width:1200px">
+						<tr align="center">
+							<td style="padding:10px;"> 
+								<div class="imgwrap" style="width:525px; height:auto;">
+									<img src="{% static 'myapp/images/artwork/skull.jpg' %}" style="width:525px;"> 
+									<p class="imgDescription"> "PIROUETTE" <br> 
+										GRAPHITE DRAWING. 2015. </p>
+								</div>
+							</td>
+
+							<td style="padding:10px;">
+								<div class="imgwrap" style="width:565px; height:auto;">
+									<img src="{% static 'myapp/images/artwork/ribbons.jpg' %}" style="width:565px;"> 
+									<p class="imgDescription">"WRAP" <br> 
+										OIL & CHALK PASTEL. 2010. </p>
+								</div>
+							</td>
+
+						</tr>
+					</table>
+
+					<table style="width:1200px">
+						<tr align="center">
+							<td style="padding:10px;"> 
+								<div class="imgwrap" style="width:677px; height:auto;">
+									<img src="{% static 'myapp/images/artwork/beach.jpg' %}" style="width:677px;"> 
+									<p class="imgDescription"> "PARADISE" <br> 
+										WATERCOLOR PAINTING. 2008. </p>
+								</div>
+							</td>
+
+							<td style="padding:10px;">
+								<div class="imgwrap" style="width:413px; height:auto;">
+									<img src="{% static 'myapp/images/artwork/interior.jpg' %}" style="width:413px;"> 
+									<p class="imgDescription">"MESS" <br> 
+										GRAPHITE DRAWING. 2014. </p>
+								</div>
+							</td>
+
+						</tr>
+					</table>
+
+					<table style="width:1200px">
+						<tr align="center">
+							<td style="padding:10px;">
+								<div class="imgwrap" style="width:419px; height:auto;">
+									<img src="{% static 'myapp/images/artwork/baby.jpg' %}" style="width:419px;"> 
+									<p class="imgDescription">"SEE" <br> 
+										INK. 2010. </p>
+								</div>
+							</td>
+
+							<td style="padding:10px;"> 
+								<div class="imgwrap" style="width:673px; height:auto;">
+									<img src="{% static 'myapp/images/artwork/jennysaville.jpg' %}" style="width:673px;"> 
+									<p class="imgDescription"> "BLUSH" <br> 
+										OIL PAINTING. 2015. </p>
+								</div>
+							</td>
+						</tr>
+					</table>
+
+
 				</div>
 
 
@@ -385,8 +666,9 @@
 
 					<p align="center" style="width:300px"> Feel free to contact me if you have questions or just want to talk - I'd love to chat!
 					<br>
-					<p align="left" style="width:300px; padding-left:40px;"><br> <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> email: anaislee@seas.upenn.edu
-					<br> <span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span>  cell: (703) 309 - 1339</p>   	
+					<p align="left" style="width:300px; padding-left:40px;"><br> <a class="hvr-grow" style="color:rgb(66,66,66); text-decoration:none;"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> email: anaislee@seas.upenn.edu</a>
+
+					<br> <a class="hvr-grow" style="color:rgb(66,66,66); text-decoration:none;"><span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span>  cell: (703) 309 - 1339</a></p>   	
 
 
 			</div> <!--end cover-container-->
@@ -396,9 +678,11 @@
     <!--FOOTER: in last page-->
 	<div class="footer">
 		<div class="inner">
-			<img id="mainimg" src="{% static 'myapp/images/logos/logo.svg' %}" style="width:150px; padding-bottom:20px;">
+			<a class="hvr-buzz-out">
+				<img id="mainimg" src="{% static 'myapp/images/logos/logo.svg' %}" style="width:150px; padding-bottom:20px;">
+			</a>
 
-			<p>anais angela lee  |  email:anaislee@seas.upenn.edu  |  cell:703-309-1339  |  <a href="#top" style="color: black">scroll to top</a></p>
+			<p>anais angela lee  |  email:anaislee@seas.upenn.edu  |  cell:703-309-1339  |  <a href="#top" class="hvr-grow" style="text-decoration:none; color: rgb(66,66,66);">scroll to top</a></p>
 		</div>
 	</div> <!--end mastfoot-->
 
