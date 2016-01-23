@@ -157,7 +157,7 @@ p {
 .firstpage {
 	background:  rgb(242, 239, 224);
 	color: rgb(66, 66, 66);
-  padding-bottom: 0px
+  padding-bottom: 80px
 }
 .secondpage {
 	background: rgb(208, 190, 118);
@@ -165,7 +165,7 @@ p {
   z-index:10;
   float:center;
   width:100%;  
-  padding-bottom:800px;
+  padding-bottom:900px;
   padding-top:0;
 }
 
@@ -173,7 +173,7 @@ p {
 	background: rgb(196, 141, 116);
 	color: rgb(66, 66, 66);
   padding-top: 100px;
-  padding-bottom:900px;
+  padding-bottom:5100px;
 }
 
 .fourthpage {
@@ -224,14 +224,14 @@ p {
 
 .right-side-text {
   position:absolute;
-  width:450px;
+  width:480px;
   right:8%; 
 }
 
 .left-side-text {
   padding-top:100px;
   position:absolute;
-  width:450px;
+  width:490px;
   left:8%;
 }
 
@@ -248,6 +248,13 @@ p {
   -ms-transform: rotate(-10deg);
   /* Opera */
   -o-transform: rotate(-10deg);
+}
+
+.projects-only {
+  width:97%;
+  position:absolute;
+  left:1%;
+  text-align: center;
 }
 
 .photos-only {
@@ -291,6 +298,7 @@ p.imgDescription {
   visibility:hidden;
   opacity:0;
 }
+
 
 .imgwrap:hover .imgDescription {
   visibility: visible;
@@ -551,6 +559,9 @@ body {
 hr.small {
     max-width: 100px;
 }
+
+
+
 
 /* Side Menu */
 

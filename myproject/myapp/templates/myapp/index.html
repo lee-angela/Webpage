@@ -24,6 +24,7 @@
 
 	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 
+	<link href='https://fonts.googleapis.com/css?family=Sacramento' rel='stylesheet' type='text/css'>
 	<!--END FONTS-->
 
     <meta charset="utf-8">
@@ -38,18 +39,16 @@
 
     <!-- Bootstrap core CSS -->
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
-
     <!--load my stylesheet after bootstrap to override-->
     <link rel="stylesheet" type="text/css" href="{% static 'myapp/style.css' %}" />
-
     <!--hover stylesheet-->
     <link href="{% static 'myapp/hover.css' %}" rel="stylesheet" media="all">
-
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="cover.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{% static 'myapp/creative.css' %}" rel="stylesheet" media="all" />
+    <!-- Animate.css CSS -->
+    <link href="{% static 'myapp/animate.css' %}" rel="stylesheet" media="all"/>
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -61,36 +60,54 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-
-    <!--script for toggling EYE.SVG -> CLOSEDEYE.svg --> 
-    <script type = "text/javascript">
-    	x=0;
-          function displayNextImage() {
-              x = (x === images.length - 1) ? 0 : x + 1;
-              document.getElementById("mainimg") = images[x];
-          }
-
-          function displayPreviousImage() {
-              x = (x <= 0) ? images.length - 1 : x - 1;
-              document.getElementById("mainimg") = images[x];
-          }
-
-          function startTimer() {
-              setInterval(displayNextImage, 20);
-          }
-
-          var images =  new Array();
-          x = 0;
-          images[0] = new Image();
-          images[0].src = "{% static 'myapp/images/eye.svg' %}" style="width:400px; height:400px";
-          images[1] = new Image();
-          images[1].src = "{% static 'myapp/images/closedeye.svg' %}" style="width:400px; height:400px";
-      </script>
-    <!--end script for toggling main imgs-->
-
 </head>
 
 <body onload = "startTimer()">
+
+	 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#top" style="font-family: 'Sacramento', cursive; font-size:50px;">
+                	<img id="straight-logo" src="{% static 'myapp/images/logos/straight-logo.svg' %}" style="width:250px; margin-top:-25px;">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="#aboutme">about me</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#productdesign">product design</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#code">code</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#photography">photography</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#finearts">other arts</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contactme">contact me</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+
 
 	<div class="site-wrapper firstpage" id="top">
 		<div class="site-wrapper-inner">
@@ -132,19 +149,19 @@
 			    </nav> <!--end navigation-->
 
 		        <div class="inner cover">
-		        	<a href="#" class="button hvr-buzz-out">
-		           		<img id="mainimg" src="{% static 'myapp/images/logos/logo.svg' %}" style="width:300px; margin-top:-20px;">
+		        	<a href="#">
+		           		<img id="mainimg" class=" animated swing" src="{% static 'myapp/images/logos/logo.svg' %}" style="width:300px; margin-top:-20px;">
 		           	</a>
 		           	
 
 		           	<!--<p class="tagline"> create | design | code </p>-->
 
-			        <div style="padding-top: 200px">
+			        <div style="padding-top: 350px">
 
-					<a href="#aboutme" class="button hvr-pulse-grow" style="page-break-after:always;">
-						<span style="font-size:1.5em; color: #b2b2b2;" class="glyphicon glyphicon-chevron-down"></span>
-					</a>
-				</div>
+						<a href="#aboutme" class="button hvr-pulse-grow" style="page-break-after:always;">
+							<span style="font-size:1.5em; color: #b2b2b2;" class="glyphicon glyphicon-chevron-down"></span>
+						</a>
+					</div>
 		        </div> <!-- end inner cover-->
 
     		</div> <!-- end cover-container-->
@@ -166,7 +183,6 @@
 							<img src="{% static 'myapp/images/me.svg' %}" style="width:700px;" class="hvr-rotate-left">
 					</div>
 					<div class="right-side-text" style="float:right; padding-top:350px">
-
 						<h2 style="height: 70px; width:150px; font-family: 'Chelsea Market', cursive; float:left"> about <br> me </h2>
 
 						<p align="left"> Hi there! I'm Angela, and I am currently in my final year at the University of Pennsylvania. This spring I will graduate with a BSE in Digital Media Design, a fusion between Computer Science and Computer Graphics. </p>
@@ -189,8 +205,11 @@
 		<div class="site-wrapper-inner">
 			<div class="cover-container">
 
-				<div class="left-side-text" style="float:right">
+				<div style="position:absolute; right:-1%; padding-top:-10%;">
+					<img src="{% static 'myapp/images/product_design/messy2.jpg' %}" style="width:750px;">
+				</div>
 
+				<div class="left-side-text" style="float:right; padding-top: 200px;">
 					<h2 style="height: 70px; width:150px; font-family: 'Over the Rainbow', cursive; float:left"> product <br> design </h2>
 
 					<p align="left"> I love to craft and design new products! These projects started off as personal projects, and they grew to something bigger most of the time. I'm continuously learning ways to make a bigger impact with my passions. </p>
@@ -198,11 +217,212 @@
 					<p align="left"> So far, I have worked with materials such as metals, leather, and graphics. I am focusing on jewelry for now, but hope to create a brand of leather goods in the near future. Below are a few of my favorite examples! </p>
 				</div>
 
-				<div class="right-side-text" align="right" style="padding-top: 500px; right:20%"> 
-					<p> blah blah this is my jewelry </p>
-					<p> find my site here: <a href="https://www.etsy.com/shop/BetterinGold" target="_blank"><img src="{% static 'myapp/images/logos/etsy-icon.png' %}" style="width:50px;"> </a></p>
-				</div>  
+				
 
+				<div style="padding-top: 550px; padding-bottom: 150px;">
+						<a href="#projects" class="button hvr-pulse-grow" style="page-break-after:always;">
+							<span style="font-size:1.5em; color: rgb(242, 239, 224);" class="glyphicon glyphicon-chevron-down"></span>
+						</a>
+				</div>
+
+
+		
+				<div id="projects" class="projects-only">
+
+		<!--section for jewelry-->
+					<table id="photo-section" style="width:100%; ">
+						<tr align="center" style="width:100%;"> 
+							<td > 
+								<div class="imgwrap" style="width:544px; height:auto;">
+									<img src="{% static 'myapp/images/product_design/jewelry/diamondcloseup.jpg' %}" style="width:544px;" class="darken">
+									<p class="imgDescription"> "TRIPLE DIAMOND NECKLACE" <br> 
+									<a href="www.etsy.com/shop/BetterinGold">buy it here</a> </p>
+								</div>
+					 		</td>
+					 		<td > 
+								<div class="imgwrap" style="width:544px; height:auto;">
+									<img src="{% static 'myapp/images/product_design/jewelry/ynecklacecloseup.jpg' %}" style="width:544px;" class="darken">
+									<p class="imgDescription"> "MIXED-MEDIA LOOP Y-NECKLACE" <br> 
+									<a href="www.etsy.com/shop/BetterinGold">buy it here</a> </p>
+								</div>
+					 		</td>
+							
+						</tr>
+					</table>
+
+					<table id="photo-section" style="width:100%" >
+						<tr align="center" style="width:100%;"> 
+							<td > 
+								<div class="imgwrap" style="width:544px; height:auto;">
+									<img src="{% static 'myapp/images/product_design/jewelry/circlecloseup.jpg' %}" style="width:544px;" class="darken">
+									<p class="imgDescription"> "CIRCLE PENDANT Y-NECKLACE" <br> 
+									<a href="www.etsy.com/shop/BetterinGold">buy it here</a> </p>
+								</div>
+					 		</td>
+
+					 		<td style="width:555px;"> 
+								<div class="project_text" style="width:370px; float:center;height:auto; text-align:left;">
+									<h3 style="font-family: 'Over the Rainbow', cursive;"> NO. 1: Jewelry Design </h3>
+									<p> My currently ongoing project is my jewelry shop on Etsy. I design and hand-make the pieces with long-lasting materials such as gold and sterling silver. I put a lot of time into finding pieces that fit my aesthetic without compromising quality. Visit my etsy shop, BetterinGold, at the link below: <br> 
+										
+										<a href="https://www.etsy.com/shop/BetterinGold" target="_blank" style="text-decoration:none; color:rgb(242, 239, 224);"><img src="{% static 'myapp/images/logos/etsy-icon.png' %}" style="width:50px;"> visit my etsy shop here! </a> 
+									</p>
+								</div>
+							</td>
+							
+						</tr>
+					</table>
+
+					<table id="photo-section" style="width:100%;" >
+						<tr align="center" style="width:100%;"> 
+							
+							<td > 
+								<div class="imgwrap" style="width:544px; height:auto;">
+									<img src="{% static 'myapp/images/product_design/jewelry/triangle.jpg' %}" style="width:544px;" class="darken">
+									<p class="imgDescription"> "TRIANGLE PENDANT NECKLACE" <br> 
+									<a href="www.etsy.com/shop/BetterinGold">buy it here</a> </p>
+								</div>
+					 		</td>
+
+							<td > 
+								<div class="imgwrap" style="width:544px; height:auto;">
+									<img src="{% static 'myapp/images/product_design/jewelry/claspcloseup.jpg' %}" style="width:544px;" class="darken">
+									<p class="imgDescription"> 
+									<a href="www.etsy.com/shop/BetterinGold" style="text-decoration:none;">browse all products here</a> </p>
+								</div>
+					 		</td>
+						</tr>
+					</table>
+
+
+
+
+			<!--section for handbag designs-->
+					<table id="photo-section" style="width:100%; padding-top:200px;" >
+						<tr align="center" style="width:100%;"> 
+							<td > 
+								<div class="imgwrap" style="width:544px; height:auto;">
+									<img src="{% static 'myapp/images/product_design/handbag/sewing.jpg' %}" style="width:544px;" class="darken">
+									<p class="imgDescription"> HAND-SEWN WITH WAXED THREAD FOR DURABILITY </p>
+								</div>
+					 		</td>
+
+							<td > 
+								<div class="imgwrap" style="width:544px; height:auto;">
+									<img src="{% static 'myapp/images/product_design/handbag/side.jpg' %}" style="width:544px;" class="darken">
+									<p class="imgDescription"> HEX-SHAPE </p>
+								</div>
+					 		</td>
+						</tr>
+
+						<tr align="center" style="width:100%;"> 
+							<td style="width:555px;"> 
+								<div class="project_text" style="width:370px; float:center;height:auto; text-align:left;">
+									<h3 style="font-family: 'Over the Rainbow', cursive;"> NO. 2: Leather Handbag </h3>
+									<p> blah blah bags. Not yet available.  <br> 
+										
+									</p>
+								</div>
+					 		</td>
+
+							<td> 
+								<div class="imgwrap" style="width:544px; height:auto;">
+									<img src="{% static 'myapp/images/product_design/handbag/top.jpg' %}" style="width:544px;" class="darken">
+									<p class="imgDescription"> MINIMALISTIC CLOSURE </p>
+								</div>
+					 		</td>
+						</tr>
+
+						<tr align="center" style="width:100%;"> 
+							<td > 
+								<div class="imgwrap" style="width:544px; height:auto;">
+									<img src="{% static 'myapp/images/product_design/handbag/handles.jpg' %}" style="width:544px;" class="darken">
+									<p class="imgDescription"> ROLLED HANDLES </p>
+								</div>
+					 		</td>
+
+							<td > 
+								<div class="imgwrap" style="width:544px; height:auto;">
+									<img src="{% static 'myapp/images/product_design/handbag/front.jpg' %}" style="width:544px;" class="darken">
+									<p class="imgDescription"> DUFFLE SHAPE </p>
+								</div>
+					 		</td>
+						</tr>
+					</table>
+
+
+
+
+
+
+			<!--section for clothing designs-->
+					<table id="photo-section" style="width:100%; padding-top:200px;">
+						<tr align="center" style="width:100%;"> 
+							<td > 
+								<div class="imgwrap" style="width:544px; height:auto;">
+									<img src="{% static 'myapp/images/product_design/clothes/ballet-w-denim.jpg' %}" style="width:544px;" class="darken">
+									<p class="imgDescription"> "SUITING PINAFORE DRESS"</p>
+								</div>
+					 		</td>
+					 		<td > 
+								<div class="imgwrap" style="width:544px; height:auto;">
+									<img src="{% static 'myapp/images/product_design/clothes/boucle-w-jacket.jpg' %}" style="width:544px;" class="darken">
+									<p class="imgDescription"> "BOUCLE BABYDOLL DRESS" </p>
+								</div>
+					 		</td>
+							
+						</tr>
+					</table>
+
+					<table id="photo-section" style="width:100%" >
+						<tr align="center" style="width:100%;"> 
+							<td > 
+									<img src="{% static 'myapp/images/product_design/clothes/sewing.jpg' %}" style="width:544px;" class="darken">
+					 		</td>
+
+					 		<td style="width:555px;"> 
+								<div class="project_text" style="width:370px; float:center;height:auto; text-align:left;">
+									<h3 style="font-family: 'Over the Rainbow', cursive;"> NO. 3: FASHION DESIGN </h3>
+									<p> fashion blah blah 
+									</p>
+
+								</div>
+							</td>
+						</tr>
+					</table>
+
+					<table id="photo-section" style="width:100%;" >
+						<tr align="center" style="width:100%;"> 
+							<td > 
+								<div class="imgwrap" style="width:493px; height:auto;">
+									<img src="{% static 'myapp/images/product_design/clothes/cape.jpg' %}" style="width:493px;" class="darken">
+									<p class="imgDescription"> DETAIL </p>
+								</div>
+					 		</td>
+
+							<td > 
+								<img src="{% static 'myapp/images/product_design/messy.jpg' %}" style="width:598px;">
+					 		</td>
+						</tr>
+					</table>
+
+					<table id="photo-section" style="width:100%;" >
+						<tr align="center" style="width:100%;"> 
+							<td > 
+								<div class="imgwrap" style="width:749px; height:auto;">
+									<img src="{% static 'myapp/images/product_design/clothes/ballet_detail.jpg' %}" style="width:749px;" class="darken">
+									<p class="imgDescription"> DETAIL </p>
+								</div>
+					 		</td>
+					 		<td > 
+								<div class="imgwrap" style="width:341px; height:auto;">
+									<img src="{% static 'myapp/images/product_design/clothes/floral.jpg' %}" style="width:341px;" class="darken">
+									<p class="imgDescription"> "FLORAL LINEN 2-PIECE" </p>
+								</div>
+					 		</td>
+						</tr>
+					</table>
+				</div> <!--end div "projects"-->
 
 
 			</div> <!--end cover-container-->
@@ -523,14 +743,14 @@
 					<table style="width:1200px">
 						<tr align="center">
 							<td style="padding:10px;">
-									<iframe src="https://player.vimeo.com/video/115413890" width="535px" height="350px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+									<iframe src="https://player.vimeo.com/video/115413890" width="540px" height="350px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
 
 									<p><a href="https://vimeo.com/115413890">3D Elephant Model</a> from <a href="https://vimeo.com/user35750132" target="_blank">Angela Lee</a> on <a href="https://vimeo.com" target="_blank">Vimeo</a>. <br> 
 									Model created using Autodesk Maya and Mudbox. </p>
 							</td>
 
 							<td style="padding:10px;"> 
-									<iframe src="https://player.vimeo.com/video/115320279" width="535px" height="350px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+									<iframe src="https://player.vimeo.com/video/115320279" width="540px" height="350px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
 
 									<p><a href="https://vimeo.com/115320279">What If?</a> from <a href="https://vimeo.com/user35750132" target="_blank">Angela Lee</a> on <a href="https://vimeo.com" target="_blank">Vimeo</a>.<br>
 
@@ -542,8 +762,8 @@
 					<table style="width:1200px">
 						<tr align="center">
 							<td style="padding:10px;">
-								<div class="imgwrap" style="width:543px; height:auto;">
-									<img src="{% static 'myapp/images/artwork/bananaspider.gif' %}" style="width:543px;"> 
+								<div class="imgwrap" style="width:545px; height:auto;">
+									<img src="{% static 'myapp/images/artwork/bananaspider.gif' %}" style="width:545px;"> 
 									<p class="imgDescription">"BANANA-SPIDER" <br> 
 										A HAND_DRAWN ANIMATION. 2014. </p>
 								</div>
@@ -702,11 +922,49 @@
  
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
-	
-	
 
 	<!-- jQuery -->
     <script src="js/jquery.js"></script>
+
+
+     <!--animated.css during hover-->
+    <script>
+	    function animationHover(element, animation){
+		    element = $(element);
+		    element.hover(
+		        function() {
+		            element.addClass('animated ' + animation);        
+		        },
+		        function(){
+		            //wait for animation to finish before removing classes
+		            window.setTimeout( function(){
+		                element.removeClass('animated ' + animation);
+		            }, 2000);         
+		        });
+		}
+
+	    $(document).ready(function(){
+		    $('#mainimg').each(function() {
+		        animationHover(this, 'swing');
+		    });
+		});
+	</script>
+
+    <!--scrolling nav display-->
+    <script type="text/javascript">
+		(function($) {          
+		    $(document).ready(function(){                    
+		        $(window).scroll(function(){                          
+		            if ($(this).scrollTop() > 200) {
+		                $('#navbar').fadeIn(500);
+		            } else {
+		                $('#navbar').fadeOut(500);
+		            }
+		        });
+		    });
+		})(jQuery);
+		</script>
+
 
     <!-- Custom Theme JavaScript -->
     <script>
@@ -732,6 +990,7 @@
     </script>
 
 
+
     <!-- Parallax scrolling-->
     <script>
 	// init controller
@@ -754,6 +1013,9 @@
 					.addTo(controller);
 </script>
 	
+	<!-- Custom Theme JavaScript -->
+    <script src="{% static 'myapp/creative.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
 
 </body>
 </html>
