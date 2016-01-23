@@ -8,10 +8,6 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'myapp/style.css' %}" />
 
-<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
-<script src="http://www.thebuddygroup.com/js/lib/scrollmagic/jquery.scrollmagic.js"></script>
-
 <head>
 
 	<!--FONTS-->
@@ -45,10 +41,13 @@
     <link href="{% static 'myapp/hover.css' %}" rel="stylesheet" media="all">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="{% static 'myapp/creative.css' %}" rel="stylesheet" media="all" />
-    <!-- Animate.css CSS -->
+     <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/creative.css" type="text/css">
+	<!-- Animate.css CSS -->
     <link href="{% static 'myapp/animate.css' %}" rel="stylesheet" media="all"/>
+    <!--load my stylesheet after bootstrap to override-->
+    <link rel="stylesheet" type="text/css" href="{% static 'myapp/style.css' %}" />
+
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -64,7 +63,7 @@
 
 <body onload = "startTimer()">
 
-	 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+	 <nav id="mainNav" class="navbar transparent navbar-inverse navbar-fixed-top smoothscroll">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -75,12 +74,12 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand page-scroll" href="#top" style="font-family: 'Sacramento', cursive; font-size:50px;">
-                	<img id="straight-logo" src="{% static 'myapp/images/logos/straight-logo.svg' %}" style="width:250px; margin-top:-25px;">
+                	<img id="straight-logo" src="{% static 'myapp/images/logos/straight-logo.svg' %}" style="width:250px; margin-top:-30px; fill:rgb(242, 239, 224);" class="hvr-shrink">
                 </a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="font-family: 'Raleway', sans-serif;">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a class="page-scroll" href="#aboutme">about me</a>
@@ -113,44 +112,9 @@
 		<div class="site-wrapper-inner">
 			<div class="cover-container">
 
-				<!-- Navigation -->
-			    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span></a> 
-			    <nav id="sidebar-wrapper">
-
-			        <ul class="sidebar-nav">
-
-			            <li class="sidebar-brand">
-			                <a href="#top"  onclick = $("#menu-toggle").click();> anais angela lee</a>
-			            </li>
-
-			            <li class="links l1">
-			                <a href="#top" onclick = $("#menu-toggle").click(); ><span class="glyphicon glyphicon-home" aria-hidden="true"></span>  home</a>
-			            </li>
-			            <li class="links l2">
-			                <a href="#aboutme" onclick = $("#menu-toggle").click(); ><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  about me </a>
-			            </li>
-			            <li class="links l3">
-			                <a href="#productdesign" onclick = $("#menu-toggle").click(); ><span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>  product design </a>
-			            </li>
-			            <li class="links l4">
-			                <a href="#code" onclick = $("#menu-toggle").click(); ><span class="glyphicon glyphicon-file" aria-hidden="true"></span>  code </a>
-			            </li>
-			            <li class="links l5">
-			                <a href="#photography" onclick = $("#menu-toggle").click(); ><span class="glyphicon glyphicon-camera" aria-hidden="true"></span>  photography</a>
-			            </li>
-			            <li class="links l6">
-			            	<a href="#finearts" onclick = $("#menu-toggle").click(); ><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  other arts</a>
-			            </li>
-			            <li class="links l7">
-			            	<a href="#contactme" onclick = $("#menu-toggle").click(); ><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>  contact me </a>
-			            </li>
-
-			        </ul>
-			    </nav> <!--end navigation-->
-
 		        <div class="inner cover">
 		        	<a href="#">
-		           		<img id="mainimg" class=" animated swing" src="{% static 'myapp/images/logos/logo.svg' %}" style="width:300px; margin-top:-20px;">
+		           		<img id="mainimg" class="animated swing lazy" src="{% static 'myapp/images/logos/logo.svg' %}" style="width:300px; margin-top:-20px;">
 		           	</a>
 		           	
 
@@ -199,13 +163,13 @@
     <div class="top-diag-right top-second"> </div>
     <div class="bottom-diag-right bottom-third"></div>
 
-  
+
     <!-- BODY/CONTENT of page -->
 	<div class="site-wrapper thirdpage" id="productdesign" style="page-break-before:always;">
 		<div class="site-wrapper-inner">
 			<div class="cover-container">
 
-				<div style="position:absolute; right:-1%; padding-top:-10%;">
+				<div style="position:absolute;right:0; padding-top:-10%;">
 					<img src="{% static 'myapp/images/product_design/messy2.jpg' %}" style="width:750px;">
 				</div>
 
@@ -262,7 +226,7 @@
 
 					 		<td style="width:555px;"> 
 								<div class="project_text" style="width:370px; float:center;height:auto; text-align:left;">
-									<h3 style="font-family: 'Over the Rainbow', cursive;"> NO. 1: Jewelry Design </h3>
+									<h3 style="font-family: 'Over the Rainbow', cursive;"> NO. 1: jewelry design </h3>
 									<p> My currently ongoing project is my jewelry shop on Etsy. I design and hand-make the pieces with long-lasting materials such as gold and sterling silver. I put a lot of time into finding pieces that fit my aesthetic without compromising quality. Visit my etsy shop, BetterinGold, at the link below: <br> 
 										
 										<a href="https://www.etsy.com/shop/BetterinGold" target="_blank" style="text-decoration:none; color:rgb(242, 239, 224);"><img src="{% static 'myapp/images/logos/etsy-icon.png' %}" style="width:50px;"> visit my etsy shop here! </a> 
@@ -318,8 +282,8 @@
 						<tr align="center" style="width:100%;"> 
 							<td style="width:555px;"> 
 								<div class="project_text" style="width:370px; float:center;height:auto; text-align:left;">
-									<h3 style="font-family: 'Over the Rainbow', cursive;"> NO. 2: Leather Handbag </h3>
-									<p> blah blah bags. Not yet available.  <br> 
+									<h3 style="font-family: 'Over the Rainbow', cursive;"> NO. 2: leather handbag </h3>
+									<p> Before jewelry, I had been working on designing handbags for people just like me. I wanted a unique but familiar and comfortable shape, classic colors, and most importantly, only the best quality materials for durability and timelessness. This is the first handbag I created from start to end - a project that took a couple months from design to the last stitch. I am currently looking into manufacturing the bag.  <br> 
 										
 									</p>
 								</div>
@@ -382,8 +346,8 @@
 
 					 		<td style="width:555px;"> 
 								<div class="project_text" style="width:370px; float:center;height:auto; text-align:left;">
-									<h3 style="font-family: 'Over the Rainbow', cursive;"> NO. 3: FASHION DESIGN </h3>
-									<p> fashion blah blah 
+									<h3 style="font-family: 'Over the Rainbow', cursive;"> NO. 3: fashion design </h3>
+									<p> I have always been interested in fashion and designing clothing allowed me to broaded my creativity. In my opinion, much more planning and work goes into creating a garment than I had already thought. I haven't pushed this project into a public stage at this time, but hope to in the near future. 
 									</p>
 
 								</div>
@@ -890,28 +854,29 @@
 
 					<br> <a class="hvr-grow" style="color:rgb(66,66,66); text-decoration:none;"><span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span>  cell: (703) 309 - 1339</a></p>   	
 
+					<!--FOOTER: in last page-->
+					<div class="footer">
+						<div class="inner">
+							<a class="hvr-buzz-out">
+								<img id="mainimg" src="{% static 'myapp/images/logos/logo.svg' %}" style="width:150px; padding-bottom:20px;">
+							</a>
+
+							<p>anais angela lee  |  email:anaislee@seas.upenn.edu  |  cell:703-309-1339  |  <a href="#top" class="hvr-grow" style="text-decoration:none; color: rgb(66,66,66);">scroll to top</a></p>
+						</div>
+					</div> <!--end mastfoot-->
+
 
 			</div> <!--end cover-container-->
         </div> <!--end site-wrapper-inner-->
     </div> <!--end site-wrapper second-->
 
-    <!--FOOTER: in last page-->
-	<div class="footer">
-		<div class="inner">
-			<a class="hvr-buzz-out">
-				<img id="mainimg" src="{% static 'myapp/images/logos/logo.svg' %}" style="width:150px; padding-bottom:20px;">
-			</a>
-
-			<p>anais angela lee  |  email:anaislee@seas.upenn.edu  |  cell:703-309-1339  |  <a href="#top" class="hvr-grow" style="text-decoration:none; color: rgb(66,66,66);">scroll to top</a></p>
-		</div>
-	</div> <!--end mastfoot-->
+    
 
 
 
 				
 
-
-    <!-- Bootstrap core JavaScript
+	 <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -923,8 +888,21 @@
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
 
+    <!-- Custom Theme JavaScript -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+	<script src="http://www.thebuddygroup.com/js/lib/scrollmagic/jquery.scrollmagic.js"></script>
+
 	<!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="jquery.lazyload.js"></script>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="javascript/smoothscroll.js"></script>
+	<!-- Custom Theme JavaScript -->
+    <script src="js/creative.js"></script>
+
+
+
 
 
      <!--animated.css during hover-->
@@ -956,9 +934,9 @@
 		    $(document).ready(function(){                    
 		        $(window).scroll(function(){                          
 		            if ($(this).scrollTop() > 200) {
-		                $('#navbar').fadeIn(500);
+		                $('#navbar').fadeIn(1000);
 		            } else {
-		                $('#navbar').fadeOut(500);
+		                $('#navbar').fadeOut(1000);
 		            }
 		        });
 		    });
@@ -968,12 +946,6 @@
 
     <!-- Custom Theme JavaScript -->
     <script>
-	    // Opens the sidebar menu
-	    $("#menu-toggle").click(function(e) {
-	        e.preventDefault();
-	        $("#sidebar-wrapper").toggleClass("active");
-	    });
-
 	    // Scrolls to the selected menu item on the page
 	    $('a[href*=#]:not([href=#])').click(function() {
 	        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
@@ -981,7 +953,7 @@
 	            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
 	            if (target.length) {
 	                $('html,body').animate({
-	                    scrollTop: target.offset().top
+	                    scrollTop: target.offset().top 
 	                }, 1000);
 	                return false;
 	            }
@@ -993,29 +965,53 @@
 
     <!-- Parallax scrolling-->
     <script>
-	// init controller
-	var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onEnter", duration: "200%"}});
+		// init controller
+		var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onEnter", duration: "200%"}});
 
-	// build scenes
-	new ScrollMagic.Scene({triggerElement: "#parallax1"})
-					.setTween("#parallax1 > div", {y: "80%", ease: Linear.easeNone})
-					.addIndicators()
-					.addTo(controller);
+		// build scenes
+		new ScrollMagic.Scene({triggerElement: "#parallax1"})
+						.setTween("#parallax1 > div", {y: "80%", ease: Linear.easeNone})
+						.addIndicators()
+						.addTo(controller);
 
-	new ScrollMagic.Scene({triggerElement: "#parallax2"})
-					.setTween("#parallax2 > div", {y: "80%", ease: Linear.easeNone})
-					.addIndicators()
-					.addTo(controller);
+		new ScrollMagic.Scene({triggerElement: "#parallax2"})
+						.setTween("#parallax2 > div", {y: "80%", ease: Linear.easeNone})
+						.addIndicators()
+						.addTo(controller);
 
-	new ScrollMagic.Scene({triggerElement: "#parallax3"})
-					.setTween("#parallax3 > div", {y: "80%", ease: Linear.easeNone})
-					.addIndicators()
-					.addTo(controller);
-</script>
-	
-	<!-- Custom Theme JavaScript -->
-    <script src="{% static 'myapp/creative.js' %}"></script>
-    <script src="https://code.jquery.com/jquery-latest.js"></script>
+		new ScrollMagic.Scene({triggerElement: "#parallax3"})
+						.setTween("#parallax3 > div", {y: "80%", ease: Linear.easeNone})
+						.addIndicators()
+						.addTo(controller);
+	</script>
+
+    <script>
+    	(function ($) {
+		  $(document).ready(function(){
+
+		    // hide .navbar first
+		    $(".navbar").hide();
+
+		    // fade in .navbar
+		    $(function () {
+		        $(window).scroll(function () {
+
+		                 // set distance user needs to scroll before we start fadeIn
+		            if ($(this).scrollTop() > 800) {
+		                $('.navbar').fadeIn(500);
+		            } else {
+		                $('.navbar').fadeOut(500);
+		            }
+		        });
+		    });
+
+		});
+		  }(jQuery));
+    </script>
+
+
+
+   
 
 </body>
 </html>
