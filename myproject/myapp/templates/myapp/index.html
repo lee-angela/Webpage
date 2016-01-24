@@ -63,50 +63,6 @@
 
 <body onload = "startTimer()">
 
-	 <nav id="mainNav" class="navbar transparent navbar-inverse navbar-fixed-top smoothscroll">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="#top" style="font-family: 'Sacramento', cursive; font-size:50px;">
-                	<img id="straight-logo" src="{% static 'myapp/images/logos/straight-logo.svg' %}" style="width:250px; margin-top:-30px; fill:rgb(242, 239, 224);" class="hvr-shrink">
-                </a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="font-family: 'Raleway', sans-serif;">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a class="page-scroll" href="#aboutme">about me</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#productdesign">product design</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#code">code</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#photography">photography</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#finearts">other arts</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contactme">contact me</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
-
-
 
 	<div class="site-wrapper firstpage" id="top">
 		<div class="site-wrapper-inner">
@@ -114,7 +70,7 @@
 
 		        <div class="inner cover">
 		        	<a href="#">
-		           		<img id="mainimg" class="animated swing lazy" src="{% static 'myapp/images/logos/logo.svg' %}" style="width:300px; margin-top:-20px;">
+		           		<img id="mainimg" class="animated swing hvr-swing" src="{% static 'myapp/images/logos/logo.svg' %}" style="width:300px; margin-top:-20px;">
 		           	</a>
 		           	
 
@@ -136,14 +92,59 @@
         
     <!-- BODY/CONTENT of page -->
 
-	<div class="top-diag-left top-first"> </div>
-    <div class="bottom-diag-left bottom-second"></div>
+	<div class="top-diag-right top-first"> </div>
+    <div class="bottom-diag-right bottom-second"></div>
 
 
 	<div class="site-wrapper secondpage" id="aboutme" style="page-break-before:always;">
+
+		<nav id="mainNav" class="navbar transparent navbar-inverse navbar-fixed-top smoothscroll">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#top" style="font-family: 'Sacramento', cursive; font-size:50px;">
+                	<img id="straight-logo" src="{% static 'myapp/images/logos/straight-logo.svg' %}" style="width:250px; margin-top:-30px; fill:rgb(242, 239, 224);" class="hvr-shrink">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="font-family: 'Raleway', sans-serif;">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll hvr-grow" href="#aboutme">about me</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll hvr-grow" href="#code">code</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll hvr-grow" href="#productdesign">product design</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll hvr-grow" href="#photography">photography</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll hvr-grow" href="#finearts">other arts</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll hvr-grow" href="#contactme">contact me</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+
 			<div class="site-wrapper-inner">
 				<div class="cover-container">
-					<div class="picofme" style="float:left; padding-top:-20px;">
+					<div class="picofme wow bounceInUp" style="float:left; padding-top:-20px;">
 							<img src="{% static 'myapp/images/me.svg' %}" style="width:700px;" class="hvr-rotate-left">
 					</div>
 					<div class="right-side-text" style="float:right; padding-top:350px">
@@ -160,16 +161,51 @@
     </div> <!--end site-wrapper second-->
 
 
-    <div class="top-diag-right top-second"> </div>
-    <div class="bottom-diag-right bottom-third"></div>
+    <div class="top-diag-left top-second"> </div>
+    <div class="bottom-diag-left bottom-third"></div>
 
 
     <!-- BODY/CONTENT of page -->
-	<div class="site-wrapper thirdpage" id="productdesign" style="page-break-before:always;">
+	<div class="site-wrapper thirdpage" id="code" style="page-break-before:always;">
 		<div class="site-wrapper-inner">
 			<div class="cover-container">
 
-				<div style="position:absolute;right:0; padding-top:-10%;">
+				<div style="position:absolute; width:800px; left:-1%; margin-top:-70px; z-position: 10;" align="left" class="wow slideInLeft">
+					 	<img src="{% static 'myapp/images/laptop.png' %}" style="width:650px;"> 
+
+				</div>
+
+				<div class="left-side-text wow slideInLeft" style="float:left; padding-top:100px; left:2%;">
+					<a href="https://github.com/anais-lee" style="color: rgb(242, 239, 224); font-family: 'Chelsea Market', cursive; font-size: 15px; text-decoration:none;" target="_blank" class="button hvr-buzz-out">
+						<img src="{% static 'myapp/images/logos/github-logo.png' %}" style="width:70px;"> angela's git 
+					</a>
+				</div>
+
+				<div class="right-side-text" style="float:right; padding-top: 100px; right:10%">
+
+					<h2 style="height: 20px; width: 100px; font-family: 'Chelsea Market', cursive; float: left"> code </h2>
+
+		        	<p align="left" style="padding-top: 20px"> I'm a Digital Media Design major and am currently finishing up my last year at University of Pennsylvania. Digital Media Design combines computer science fundamentals with a focus on computer graphics techniques. Strongest languages are Java and C++. </p>
+
+		        	<p align="left"> My public github account can be found at the link to the left. Source code for this site can be found under the Repo titled "Webpage." </p>
+
+		        </div>
+
+			</div> <!--end cover-container-->
+        </div> <!--end site-wrapper-inner-->
+    </div> <!--end site-wrapper second-->
+
+    <div class="top-diag-right top-third"> </div>
+    <div class="bottom-diag-right bottom-fourth"></div>
+
+    
+
+    <!-- BODY/CONTENT of page -->
+	<div class="site-wrapper fourthpage" id="productdesign" style="page-break-before:always;">
+		<div class="site-wrapper-inner">
+			<div class="cover-container">
+
+				<div style="position:absolute;right:0; padding-top:-10%;" class="wow slideInRight">
 					<img src="{% static 'myapp/images/product_design/messy2.jpg' %}" style="width:750px;">
 				</div>
 
@@ -200,14 +236,14 @@
 								<div class="imgwrap" style="width:544px; height:auto;">
 									<img src="{% static 'myapp/images/product_design/jewelry/diamondcloseup.jpg' %}" style="width:544px;" class="darken">
 									<p class="imgDescription"> "TRIPLE DIAMOND NECKLACE" <br> 
-									<a href="www.etsy.com/shop/BetterinGold">buy it here</a> </p>
+									<a href="https://www.etsy.com/shop/BetterinGold" target="_blank" style="color:rgb(149, 154, 121);text-decoration:none;" class="hvr-grow">buy it here</a> </p>
 								</div>
 					 		</td>
 					 		<td > 
 								<div class="imgwrap" style="width:544px; height:auto;">
 									<img src="{% static 'myapp/images/product_design/jewelry/ynecklacecloseup.jpg' %}" style="width:544px;" class="darken">
 									<p class="imgDescription"> "MIXED-MEDIA LOOP Y-NECKLACE" <br> 
-									<a href="www.etsy.com/shop/BetterinGold">buy it here</a> </p>
+									<a href="https://www.etsy.com/shop/BetterinGold" target="_blank" style="color:rgb(149, 154, 121);text-decoration:none;" class="hvr-grow">buy it here</a> </p>
 								</div>
 					 		</td>
 							
@@ -220,7 +256,7 @@
 								<div class="imgwrap" style="width:544px; height:auto;">
 									<img src="{% static 'myapp/images/product_design/jewelry/circlecloseup.jpg' %}" style="width:544px;" class="darken">
 									<p class="imgDescription"> "CIRCLE PENDANT Y-NECKLACE" <br> 
-									<a href="www.etsy.com/shop/BetterinGold">buy it here</a> </p>
+									<a href="https://www.etsy.com/shop/BetterinGold" target="_blank" style="color:rgb(149, 154, 121);text-decoration:none;" class="hvr-grow">buy it here</a> </p>
 								</div>
 					 		</td>
 
@@ -244,7 +280,7 @@
 								<div class="imgwrap" style="width:544px; height:auto;">
 									<img src="{% static 'myapp/images/product_design/jewelry/triangle.jpg' %}" style="width:544px;" class="darken">
 									<p class="imgDescription"> "TRIANGLE PENDANT NECKLACE" <br> 
-									<a href="www.etsy.com/shop/BetterinGold">buy it here</a> </p>
+									<a href="https://www.etsy.com/shop/BetterinGold" target="_blank" style="color:rgb(149, 154, 121);text-decoration:none;" class="hvr-grow">buy it here</a> </p>
 								</div>
 					 		</td>
 
@@ -252,7 +288,7 @@
 								<div class="imgwrap" style="width:544px; height:auto;">
 									<img src="{% static 'myapp/images/product_design/jewelry/claspcloseup.jpg' %}" style="width:544px;" class="darken">
 									<p class="imgDescription"> 
-									<a href="www.etsy.com/shop/BetterinGold" style="text-decoration:none;">browse all products here</a> </p>
+									<a href="https://www.etsy.com/shop/BetterinGold" target="_blank" style="color:rgb(149, 154, 121);text-decoration:none;" class="hvr-grow">browse all products here</a> </p>
 								</div>
 					 		</td>
 						</tr>
@@ -393,38 +429,7 @@
         </div> <!--end site-wrapper-inner-->
     </div> <!--end site-wrapper second-->
 
-    <div class="top-diag-left top-third"> </div>
-    <div class="bottom-diag-left bottom-fourth"></div>
 
-    <!-- BODY/CONTENT of page -->
-	<div class="site-wrapper fourthpage" id="code" style="page-break-before:always;">
-		<div class="site-wrapper-inner">
-			<div class="cover-container">
-
-				<div style="position:absolute; width:800px; left:-1%; margin-top:-70px; z-position: 10;" align="left">
-					 	<img src="{% static 'myapp/images/laptop.png' %}" style="width:650px;"> 
-
-				</div>
-
-				<div class="left-side-text" style="float:left; padding-top:100px; left:2%;">
-					<a href="https://github.com/anais-lee" style="color: rgb(242, 239, 224); font-family: 'Chelsea Market', cursive; font-size: 15px; text-decoration:none;" target="_blank" class="button hvr-buzz-out">
-						<img src="{% static 'myapp/images/logos/github-logo.png' %}" style="width:70px;"> angela's git 
-					</a>
-				</div>
-
-				<div class="right-side-text" style="float:right; padding-top: 100px; right:10%">
-
-					<h2 style="height: 20px; width: 100px; font-family: 'Chelsea Market', cursive; float: left"> code </h2>
-
-		        	<p align="left" style="padding-top: 20px"> I'm a Digital Media Design major and am currently finishing up my last year at University of Pennsylvania. Digital Media Design combines computer science fundamentals with a focus on computer graphics techniques. Strongest languages are Java and C++. </p>
-
-		        	<p align="left"> My public github account can be found at the link to the left. Source code for this site can be found under the Repo titled "Webpage." </p>
-
-		        </div>
-
-			</div> <!--end cover-container-->
-        </div> <!--end site-wrapper-inner-->
-    </div> <!--end site-wrapper second-->
 
 	<div class="top-diag-right top-fourth"> </div>
     <div class="bottom-diag-right bottom-fifth"></div>
@@ -435,7 +440,7 @@
 		<div class="site-wrapper-inner">
 			<div class="cover-container">
 
-				<div style="position:absolute; width:700px; right:2%; margin-top:-70px; z-position: 10;" align="right">
+				<div style="position:absolute; width:700px; right:2%; margin-top:-70px; z-position: 10;" align="right" class="wow flipInX">
 					<img src="{% static 'myapp/images/photography/camera.svg' %}" style="width:650px; color:rgb(242, 239, 224)" class="hvr-rotate"> 
 				</div>
 
@@ -443,7 +448,7 @@
 					
 					<h2 style="height: 50px; font-family: 'Over the Rainbow', cursive;"> photography </h2>
 
-					<p align="left"> I'm intrigued by interesting compositions and capturing moments. I love taking pictures while I travel but also of my beautiful everyday surroundings. Here are some of my favorite photos I took of a bunch of different places with a bunch of different feels. Hover over any image to learn more! 
+					<p align="left"> I'm intrigued by interesting compositions and capturing moments. I love taking pictures while I travel but also of my everyday surroundings. Here are some of my favorite photos I took of a bunch of different places with a bunch of different feels. Hover over any image to learn more, or click on them to view them larger! 
 				</div>
 
 				<div style="padding-top: 490px">
@@ -684,7 +689,7 @@
 		<div class="site-wrapper-inner">
 			<div class="cover-container">
 
-				<div class="collage">
+				<div class="collage wow fadeIn">
 					<a href="#" class="button hvr-shrink">
 						<img src="{% static 'myapp/images/collage.png' %}" style="width:950px;">
 					</a>
@@ -692,7 +697,7 @@
 
 				<div class="right-side-text" style="float:right; right:7%; width:425px; padding-top: 400px">
 
-					<h2 style="height: 70px; width:220px; font-family: 'Chelsea Market', cursive; float:left; padding-right:10px" align="right">  miscellanous <br>art </h2>
+					<h2 style="height: 70px; width:220px; font-family: 'Chelsea Market', cursive; float:left; padding-right:10px" align="right">  miscellaneous <br>art </h2>
 
 					<p align="left"> In addition to crafting, I work with traditional mediums of art such as paint, graphite, mixed media, and even clay. I also did quite a bit of 3D modeling using Autodesk Maya and Mudbox along with some hand-drawn animations, and my reel can be found right below. Additionally below are a few examples of my work I have accumulated throughout the years. Play the videos or hover over images to learn more! </p>
 				</div>
@@ -857,7 +862,7 @@
 					<!--FOOTER: in last page-->
 					<div class="footer">
 						<div class="inner">
-							<a class="hvr-buzz-out">
+							<a class="hvr-buzz-out" href="#top">
 								<img id="mainimg" src="{% static 'myapp/images/logos/logo.svg' %}" style="width:150px; padding-bottom:20px;">
 							</a>
 
@@ -900,6 +905,13 @@
 	<script type="text/javascript" src="javascript/smoothscroll.js"></script>
 	<!-- Custom Theme JavaScript -->
     <script src="js/creative.js"></script>
+
+    <!--scroll animations-->
+    <script src="{% static 'myapp/js/wow.js' %}"></script>
+
+    <script>
+        new WOW().init();
+    </script>
 
 
 

@@ -89,49 +89,63 @@ p.tagline {
 /* between first and second pages*/
 .top-first {
   background: rgb(242, 239, 224);
+  background-image: url("images/paper.png");
 }
 .bottom-second {
     background: rgb(208, 190, 118);
+    background-image: url("images/yellow.png");
 }
 
 /* between second and third pages*/
 .top-second {
   background: rgb(208, 190, 118);
+  background-image: url("images/yellow.png");
 }
 .bottom-third {
     background: rgb(196, 141, 116);
+    background-image: url("images/salmon.png");
 }
 
 /* between third and fourth pages*/
 .top-third {
   background: rgb(196, 141, 116);
+  background-image: url("images/salmon.png");
 }
 .bottom-fourth {
-    background: rgb(180, 185, 151);
+    background: rgb(149, 154, 121);
+    background-image: url("images/greendust.png");
 }
 
 /* between fourth and fifth pages*/
 .top-fourth {
-  background: rgb(180, 185, 151);
+  background: rgb(149, 154, 121);
+  background-image: url("images/greendust.png");
 }
 .bottom-fifth {
     background: rgb(66, 66, 66);
+    background-image: url("images/photos.png");
+
 }
 
 /* between fifth and sixth pages*/
 .top-fifth {
   background: rgb(66, 66, 66);
+  background-image: url("images/photos.png");
+
 }
 .bottom-sixth {
     background: rgb(208, 190, 118);
+    background-image: url("images/yellow.png");
 }
 
 /* between sixth and seventh pages*/
 .top-sixth {
   background: rgb(208, 190, 118);
+  background-image: url("images/yellow.png");
 }
 .bottom-seventh {
     background: rgb(242, 239, 224);
+    background-image: url("images/paper.png");
 }
 
 
@@ -156,11 +170,13 @@ p {
 /* page properties*/
 .firstpage {
 	background:rgb(242, 239, 224);
+  background-image: url("images/paper.png");
 	color: rgb(66, 66, 66);
   padding-bottom: 80px
 }
 .secondpage {
 	background: rgb(208, 190, 118);
+  background-image: url("images/yellow.png");
 	color: rgb(66, 66, 66);
   z-index:10;
   float:center;
@@ -171,31 +187,37 @@ p {
 
 .thirdpage {
 	background: rgb(196, 141, 116);
+  background-image: url("images/salmon.png");
 	color: rgb(66, 66, 66);
   padding-top: 100px;
-  padding-bottom:5100px;
+  padding-bottom:900px;
 }
 
 .fourthpage {
-	background: rgb(180, 185, 151);
+	background: rgb(149, 154, 121);
+  background-image: url("images/greendust.png");
 	color: rgb(66, 66, 66);
   padding-top: 130px;
-  padding-bottom:900px;
+  padding-bottom:5100px;
+
 }
 .fifthpage {
 	background: rgb(66, 66, 66);
+  background-image: url("images/photos.png");
 	color: rgb(242, 239, 224);
   padding-top: 100px;
   padding-bottom:4800px;
 }
 .sixthpage {
 	background: rgb(208, 190, 118);
+  background-image: url("images/yellow.png");
 	color: rgb(66, 66, 66);
   padding-top: 40px;
   padding-bottom:350px;
 }
 .seventhpage {
 	background: rgb(242, 239, 224);
+  background-image: url("images/paper.png");
 	color: rgb(66, 66, 66);
   padding-top: 100px;
 }
@@ -401,6 +423,7 @@ p.imgDescription {
 
 .footer {
 	background: rgb(242, 239, 224);
+  background-image: url("images/paper.png");
   color:rgb(66, 66, 66);
 	width:100%;
   padding-top:250px;
@@ -630,7 +653,7 @@ hr.small {
 .navbar-right
     {
       padding-right:50px;
-      color:gb(242, 239, 224);
+      color:white;
     }
 
 @media(min-width:768px) {
@@ -651,12 +674,12 @@ hr.small {
 
     .navbar-default .nav > li>a,
     .navbar-default .nav>li>a:focus {
-        color: black;
+        color: white;
     }
 
     .navbar-default .nav > li>a:hover,
     .navbar-default .nav>li>a:focus:hover {
-        color: gray;
+        color: white;
     }
 
     .navbar-default.affix {
@@ -676,12 +699,12 @@ hr.small {
 
     .navbar-default.affix .nav > li>a,
     .navbar-default.affix .nav>li>a:focus {
-        color: black;
+        color: white;
     }
 
     .navbar-default.affix .nav > li>a:hover,
     .navbar-default.affix .nav>li>a:focus:hover {
-        color: #f05f40;
+        color: white;
     }
 
     .navbar-right
