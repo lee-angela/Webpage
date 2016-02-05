@@ -221,6 +221,17 @@ p {
 }
 
 
+.parallaxParent {
+    height: 100vh;
+    overflow: hidden;
+}
+.parallaxParent > * {
+   height: 200%;
+   position: relative;
+   top: -100%;
+}
+
+
 /* page properties*/
 .firstpage {
   /*background-image: url("images/paper.png");*/
@@ -291,8 +302,8 @@ p {
 }
 .heximg3 {
   background: #C9D0DD;
-  -webkit-animation-delay: 1.2s; /* Chrome, Safari, Opera */
-  animation-delay: 1.2s;
+  -webkit-animation-delay: 1.1s; /* Chrome, Safari, Opera */
+  animation-delay: 1.1s;
 }
 
 .heximg4 {
