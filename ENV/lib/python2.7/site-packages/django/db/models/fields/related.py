@@ -30,7 +30,7 @@ from .related_descriptors import (
 )
 from .related_lookups import (
     RelatedExact, RelatedGreaterThan, RelatedGreaterThanOrEqual, RelatedIn,
-    RelatedLessThan, RelatedLessThanOrEqual,
+    RelatedIsNull, RelatedLessThan, RelatedLessThanOrEqual,
 )
 from .reverse_related import (
     ForeignObjectRel, ManyToManyRel, ManyToOneRel, OneToOneRel,
@@ -39,7 +39,7 @@ from .reverse_related import (
 RECURSIVE_RELATIONSHIP_CONSTANT = 'self'
 
 
-def resolve_relation(scope_model, relation):
+def resolve_relation(scope_model, relation, resolve_recursive_relationship=True):
     """
     Transform relation into a model or fully-qualified model string of the form
     "app_label.ModelName", relative to scope_model.
@@ -54,12 +54,11 @@ def resolve_relation(scope_model, relation):
     """
     # Check for recursive relations
     if relation == RECURSIVE_RELATIONSHIP_CONSTANT:
-        relation = scope_model
-
+        if resolve_recursive_relationship:
+            relation = scope_model
     # Look for an "app.Model" relation
-    if isinstance(relation, six.string_types):
-        if "." not in relation:
-            relation = "%s.%s" % (scope_model._meta.app_label, relation)
+    elif isinstance(relation, six.string_types) and '.' not in relation:
+        relation = "%s.%s" % (scope_model._meta.app_label, relation)
 
     return relation
 
@@ -306,6 +305,11 @@ class RelatedField(Field):
                 field.remote_field.model = related
                 field.do_related_class(related, model)
             lazy_related_operation(resolve_related_class, cls, self.remote_field.model, field=self)
+        else:
+            # Bind a lazy reference to the app in which the model is defined.
+            self.remote_field.model = resolve_relation(
+                cls, self.remote_field.model, resolve_recursive_relationship=False
+            )
 
     def get_forward_related_filter(self, obj):
         """
@@ -684,9 +688,10 @@ class ForeignObject(RelatedField):
             return RelatedLessThan
         elif lookup_name == 'lte':
             return RelatedLessThanOrEqual
-        elif lookup_name != 'isnull':
+        elif lookup_name == 'isnull':
+            return RelatedIsNull
+        else:
             raise TypeError('Related Field got invalid lookup: %s' % lookup_name)
-        return super(ForeignObject, self).get_lookup(lookup_name)
 
     def get_transform(self, *args, **kwargs):
         raise NotImplementedError('Relational fields do not support transforms.')
@@ -758,8 +763,9 @@ class ForeignKey(ForeignObject):
 
         if on_delete is None:
             warnings.warn(
-                "on_delete will be a required arg for %s in Django 2.0. "
-                "Set it to models.CASCADE if you want to maintain the current default behavior. "
+                "on_delete will be a required arg for %s in Django 2.0. Set "
+                "it to models.CASCADE on models and in existing migrations "
+                "if you want to maintain the current default behavior. "
                 "See https://docs.djangoproject.com/en/%s/ref/models/fields/"
                 "#django.db.models.ForeignKey.on_delete" % (
                     self.__class__.__name__,
@@ -1000,8 +1006,9 @@ class OneToOneField(ForeignKey):
 
         if on_delete is None:
             warnings.warn(
-                "on_delete will be a required arg for %s in Django 2.0. "
-                "Set it to models.CASCADE if you want to maintain the current default behavior. "
+                "on_delete will be a required arg for %s in Django 2.0. Set "
+                "it to models.CASCADE on models and in existing migrations "
+                "if you want to maintain the current default behavior. "
                 "See https://docs.djangoproject.com/en/%s/ref/models/fields/"
                 "#django.db.models.ForeignKey.on_delete" % (
                     self.__class__.__name__,
@@ -1574,6 +1581,11 @@ class ManyToManyField(RelatedField):
                 lazy_related_operation(resolve_through_model, cls, self.remote_field.through, field=self)
             elif not cls._meta.swapped:
                 self.remote_field.through = create_many_to_many_intermediary_model(self, cls)
+        else:
+            # Bind a lazy reference to the app in which the model is defined.
+            self.remote_field.through = resolve_relation(
+                cls, self.remote_field.through, resolve_recursive_relationship=False
+            )
 
         # Add the descriptor for the m2m relation.
         setattr(cls, self.name, ManyToManyDescriptor(self.remote_field, reverse=False))

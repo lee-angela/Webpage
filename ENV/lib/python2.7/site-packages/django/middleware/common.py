@@ -8,6 +8,7 @@ from django.core.exceptions import PermissionDenied
 from django.core.mail import mail_managers
 from django.utils.cache import get_conditional_response, set_response_etag
 from django.utils.encoding import force_text
+from django.utils.http import unquote_etag
 from django.utils.six.moves.urllib.parse import urlparse
 
 logger = logging.getLogger('django.request')
@@ -120,7 +121,7 @@ class CommonMiddleware(object):
             if response.has_header('ETag'):
                 return get_conditional_response(
                     request,
-                    etag=response['ETag'],
+                    etag=unquote_etag(response['ETag']),
                     response=response,
                 )
 

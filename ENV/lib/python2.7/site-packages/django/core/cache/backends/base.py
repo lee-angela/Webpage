@@ -165,7 +165,7 @@ class BaseCache(object):
                 default = default()
             val = self.add(key, default, timeout=timeout, version=version)
             if val:
-                return self.get(key, version=version)
+                return self.get(key, default, version)
         return val
 
     def has_key(self, key, version=None):
@@ -216,7 +216,7 @@ class BaseCache(object):
 
     def delete_many(self, keys, version=None):
         """
-        Set a bunch of values in the cache at once.  For certain backends
+        Delete a bunch of values in the cache at once. For certain backends
         (memcached), this is much more efficient than calling delete() multiple
         times.
         """
